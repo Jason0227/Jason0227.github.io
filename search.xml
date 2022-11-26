@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Ruby新手村-字串和符號的差別</title>
+    <url>/2022/11/26/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E5%AD%97%E4%B8%B2%E5%92%8C%E7%AC%A6%E8%99%9F%E7%9A%84%E5%B7%AE%E5%88%A5/</url>
+    <content><![CDATA[<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：什麼是符號，什麼是字串，他們的差別，個別使用時機，彼此如何轉換</strong>  </p>
+          </div></h1><hr>
+<h1 id="什麼是符號"><a href="#什麼是符號" class="headerlink" title="什麼是符號"></a><em><strong>什麼是符號</strong></em></h1><h2 id="1-語法："><a href="#1-語法：" class="headerlink" title="1.語法："></a>1.語法：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:apple              # 這個符號叫apple，會在符號名稱前面加上冒號</span><br></pre></td></tr></table></figure>
+<h2 id="2-定義：-他也是一個物件"><a href="#2-定義：-他也是一個物件" class="headerlink" title="2.定義： 他也是一個物件"></a>2.定義： 他也是一個物件</h2><p>舉例來說：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1                   #數字物件</span><br><span class="line">&quot;aa&quot;                #字串物件</span><br><span class="line">:apple              #符號物件</span><br><span class="line">name = 1            #我指定name變數的值為數字1</span><br><span class="line">name = &quot;aa&quot;         #我指定name變數的值為字串aa</span><br><span class="line">name = :apple       #我指定name變數的值為符號apple</span><br><span class="line">         </span><br><span class="line">#下面這行語法錯誤，符號不能指定成字串，而且他是一個值，無法放在等號左邊</span><br><span class="line">:apple = 1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="什麼是字串"><a href="#什麼是字串" class="headerlink" title="什麼是字串"></a><em><strong>什麼是字串</strong></em></h1><h2 id="1-定義：把內容用引號框起來變成一個字串物件"><a href="#1-定義：把內容用引號框起來變成一個字串物件" class="headerlink" title="1.定義：把內容用引號框起來變成一個字串物件"></a>1.定義：把內容用引號框起來變成一個字串物件</h2><h2 id="2-語法："><a href="#2-語法：" class="headerlink" title="2.語法："></a>2.語法：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;aa&#x27;               #單引號字串，特色:不能把變數帶到字串當中</span><br><span class="line">&quot;aa&quot;               #雙引號字串，特色:能把變數帶到字串當中</span><br></pre></td></tr></table></figure>
+<h2 id="3-雙引號字串舉例："><a href="#3-雙引號字串舉例：" class="headerlink" title="3.雙引號字串舉例："></a>3.雙引號字串舉例：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name = &quot;Jason&quot;</span><br><span class="line">age = 18</span><br><span class="line">puts &quot;hi I am #&#123;name&#125;, and I am #&#123;age&#125; years old&quot;</span><br><span class="line">#會印出 hi I am Jason, and I am 18 years old</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="他們的差別"><a href="#他們的差別" class="headerlink" title="他們的差別"></a><em><strong>他們的差別</strong></em></h1><h2 id="1-字串的值可以改，符號不行"><a href="#1-字串的值可以改，符號不行" class="headerlink" title="1.字串的值可以改，符號不行"></a>1.字串的值可以改，符號不行</h2><h2 id="2-符號效能比字串好一點："><a href="#2-符號效能比字串好一點：" class="headerlink" title="2.符號效能比字串好一點："></a>2.符號效能比字串好一點：</h2><p>同個名字的符號，在記憶體裡面只有佔一個ID，但早期用完不會還(所以早期不一定比較省記憶體)。而字串每一個都有各自的ID，但用完會還。<br>補充：<br>在Ruby裡，數字物件的object ID 公式是2n+1，如果是2，object ID 是5，如果是5，object ID 是11，所以單數的object ID號碼大部分都是數字物件。</p>
+<hr>
+<h1 id="個別使用時機-（簡單區分）"><a href="#個別使用時機-（簡單區分）" class="headerlink" title="個別使用時機 （簡單區分）"></a><em><strong>個別使用時機 （簡單區分）</strong></em></h1><h2 id="1-如果這個東西不可變，用符號或冷凍字串"><a href="#1-如果這個東西不可變，用符號或冷凍字串" class="headerlink" title="1.如果這個東西不可變，用符號或冷凍字串"></a>1.如果這個東西不可變，用符號或冷凍字串</h2><h2 id="2-如果這個東西需要組合或變動的話，用字串"><a href="#2-如果這個東西需要組合或變動的話，用字串" class="headerlink" title="2.如果這個東西需要組合或變動的話，用字串"></a>2.如果這個東西需要組合或變動的話，用字串</h2><p>補充：<br>冷凍字串：目的是讓此物件的object ID 固定。</p>
+<h2 id="3-語法："><a href="#3-語法：" class="headerlink" title="3.語法："></a>3.語法：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">puts &quot;hello&quot;.freeze.object_id       #這邊用了freeze的方法</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="字串和符號轉換"><a href="#字串和符號轉換" class="headerlink" title="字串和符號轉換"></a><em><strong>字串和符號轉換</strong></em></h1><h2 id="1-語法-to-sym，sym就是symbol"><a href="#1-語法-to-sym，sym就是symbol" class="headerlink" title="1. 語法 to_sym，sym就是symbol"></a>1. 語法 to_sym，sym就是symbol</h2><h2 id="2-語法-to-s-，-s就是string"><a href="#2-語法-to-s-，-s就是string" class="headerlink" title="2. 語法 to_s ， s就是string"></a>2. 語法 to_s ， s就是string</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#字串轉符號</span><br><span class="line">p &quot;name&quot;.to_sym     #印出 :name ，這個方法常用</span><br><span class="line">p &quot;name&quot;.intern     #印出 :name</span><br><span class="line">#符號轉字串 </span><br><span class="line">p :name.to_s        #印出 &quot;name&quot; ，這個方法常用 </span><br><span class="line">p :name.id2name     #印出 &quot;name&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Ruby</category>
+      </categories>
+      <tags>
+        <tag>符號</tag>
+        <tag>字串</tag>
+      </tags>
+  </entry>
+</search>
