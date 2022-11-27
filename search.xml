@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ruby新手村-物件導向程式設計(OOP)</title>
+    <url>/2022/11/28/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88-OOP/</url>
+    <content><![CDATA[<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：兩個故事，物件導向程式設計簡介，為何要使用OOP?什麼是類別?什麼是實體?什麼是繼承?故事講解</strong>  </p>
+          </div></h1><hr>
+<h1 id="兩個故事"><a href="#兩個故事" class="headerlink" title="兩個故事"></a><em><strong>兩個故事</strong></em></h1><p>為了方便大家理解專業術語，我們先來聽聽兩個故事</p>
+<h2 id="1-火影忍者："><a href="#1-火影忍者：" class="headerlink" title="1. 火影忍者："></a>1. 火影忍者：</h2><p>不知大家有沒有看過火影忍者(完全沒看過說不過去拉！)，看過的人都知道宅女男神{佐助}，他的來自『宇智波』家族，招牌招式莫過於「血輪眼了」，當然還有更帥的招式[須佐能乎]</p>
+<h2 id="2-貓狗大戰："><a href="#2-貓狗大戰：" class="headerlink" title="2. 貓狗大戰："></a>2. 貓狗大戰：</h2><p>常常大家都會問你是『貓』派還是『狗』派？想必大家都有被某種『動物』可愛模樣融化的經驗，或許是一個叫{kitty}『貓』的「傲嬌個性」不時還會[討摸]，有機會還可以訓練[翻跟斗]，還是叫{lucky}『狗』的「效忠個性」總是看著主人[搖尾巴]，還可以訓練他們[拿報紙]</p>
+<p>聽完這兩個完全不一樣的故事，是不是很莫名其妙，哈哈，但其實針對故事內的索引號，可以套用到今天要講的內容中</p>
+<hr>
+<h1 id="物件導向程式設計-OOP-簡介"><a href="#物件導向程式設計-OOP-簡介" class="headerlink" title="物件導向程式設計(OOP)簡介"></a><em><strong>物件導向程式設計(OOP)簡介</strong></em></h1><p><img src="https://i.imgur.com/wo1IIPn.png"></p>
+<h2 id="1-什麼是物件"><a href="#1-什麼是物件" class="headerlink" title="1.什麼是物件:"></a>1.什麼是物件:</h2><p>物件 ＝ 狀態（名詞）＋ 行為（動詞）</p>
+<h2 id="2-為何要使用oop"><a href="#2-為何要使用oop" class="headerlink" title="2.為何要使用oop:"></a>2.為何要使用oop:</h2><p>為了用擬人化的方式去做分類和操作，讓程式碼更容易使用和理解</p>
+<p><strong>[冷知識]：在Ruby裡幾乎什麼東西都是物件，那什麼不是物件？</strong></p>
+<p>答案是：Block 和 方法</p>
+<hr>
+<h1 id="什麼是類別-class"><a href="#什麼是類別-class" class="headerlink" title="什麼是類別(class)"></a><em><strong>什麼是類別(class)</strong></em></h1><h2 id="1-他是OOP常用到的觀念之一"><a href="#1-他是OOP常用到的觀念之一" class="headerlink" title="1. 他是OOP常用到的觀念之一"></a>1. 他是OOP常用到的觀念之一</h2><h2 id="2-此定義方法使用對象為實體，也可以說通常實體是某個類別的產物"><a href="#2-此定義方法使用對象為實體，也可以說通常實體是某個類別的產物" class="headerlink" title="2. 此定義方法使用對象為實體，也可以說通常實體是某個類別的產物"></a>2. 此定義方法使用對象為實體，也可以說通常實體是某個類別的產物</h2><h2 id="3-類別的命名規定-＝-名字第一個字必須是常數"><a href="#3-類別的命名規定-＝-名字第一個字必須是常數" class="headerlink" title="3. 類別的命名規定 ＝ 名字第一個字必須是常數"></a>3. 類別的命名規定 ＝ 名字第一個字必須是常數</h2><hr>
+<h1 id="什麼是實體"><a href="#什麼是實體" class="headerlink" title="什麼是實體"></a><em><strong>什麼是實體</strong></em></h1><h2 id="1-他是OOP常用到的觀念之一-1"><a href="#1-他是OOP常用到的觀念之一-1" class="headerlink" title="1. 他是OOP常用到的觀念之一"></a>1. 他是OOP常用到的觀念之一</h2><h2 id="2-針對某個類別創造出的個體"><a href="#2-針對某個類別創造出的個體" class="headerlink" title="2. 針對某個類別創造出的個體"></a>2. 針對某個類別創造出的個體</h2><h2 id="3-類別的命名規則沒有特別規定"><a href="#3-類別的命名規則沒有特別規定" class="headerlink" title="3. 類別的命名規則沒有特別規定"></a>3. 類別的命名規則沒有特別規定</h2><hr>
+<h1 id="什麼是繼承"><a href="#什麼是繼承" class="headerlink" title="什麼是繼承"></a>什麼是繼承</h1><h2 id="1-與其說是繼承不如說是分類"><a href="#1-與其說是繼承不如說是分類" class="headerlink" title="1. 與其說是繼承不如說是分類"></a>1. 與其說是繼承不如說是分類</h2><h2 id="2-同個分類創造的實體，都會有相同的特徵"><a href="#2-同個分類創造的實體，都會有相同的特徵" class="headerlink" title="2. 同個分類創造的實體，都會有相同的特徵"></a>2. 同個分類創造的實體，都會有相同的特徵</h2><p>用以下程式碼例子說明類別與實體和繼承的關係：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                         #在貓的類別當中</span><br><span class="line"> def eat(food)                    #他們有個吃東西的方法 </span><br><span class="line">  puts &quot;#&#123;food&#125; 好吃！&quot;            #這個方法會有食物好吃的動作</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new                   #在貓類別創造一個叫kitty的實體貓</span><br><span class="line">kitty.eat &quot;魚&quot;                    #因為kitty也是貓類，所以他也會有吃東西的方法吃魚</span><br><span class="line"></span><br><span class="line">#會印出： 魚 好吃！</span><br></pre></td></tr></table></figure>
+<p>簡單來說，以目前所學：</p>
+<p>我們可以有很多種類別，以貓類和狗類為例，針對不同種類可以產生不同類型的狗和貓，他們有會因為彼此類別的不同，繼承相對應的方法動作(特徵)</p>
+<hr>
+<h1 id="故事講解"><a href="#故事講解" class="headerlink" title="故事講解"></a>故事講解</h1><p>聽完這些專業術語，對於沒學程式的人或許還是很難理解，不然我們來講解剛剛一開始的故事吧～</p>
+<h2 id="1-火影忍者：-1"><a href="#1-火影忍者：-1" class="headerlink" title="1. 火影忍者："></a>1. 火影忍者：</h2><p>套用剛剛所學，{佐助}這個實體，來自『宇智波』家族這個類別，而這個家族的人都繼承了「寫輪眼」這個技能方法，這樣不就把剛剛的東西串起來了嗎？(或許抓到感覺了？可能喔～哈哈)</p>
+<h2 id="2-貓狗大戰：-1"><a href="#2-貓狗大戰：-1" class="headerlink" title="2. 貓狗大戰："></a>2. 貓狗大戰：</h2><p>『貓咪』和『狗狗』同樣都來自『哺乳動物』這個類別，所以他們都繼承了『哺乳動物』的特性，然而貓狗兩類都有各自的世界，像是『貓類』所創造的{kitty}貓咪，他們都繼承了「傲嬌的個性」，『狗類』所創造的{lucky}狗狗，他們都繼承了「效忠的性格」(這個例子或許比較容易讓大家接受吧？你是貓派還是狗派呢？)</p>
+<p>補充：</p>
+<p>或許有人疑惑那{佐助}的[須佐能乎]帥氣技能呢？{貓}的[討拍]跟[翻跟斗]呢？{狗}的[搖尾巴]跟[拿報紙]呢？由於這些技能在其他種類也有機會學會，所以我把他歸類到之後會介紹的模組module</p>
+]]></content>
+      <categories>
+        <category>Ruby</category>
+      </categories>
+      <tags>
+        <tag>oop</tag>
+        <tag>類別</tag>
+        <tag>實體</tag>
+        <tag>繼承</tag>
+        <tag>物件</tag>
+        <tag>Block</tag>
+        <tag>命名</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ruby新手村-字串和符號的差別</title>
     <url>/2022/11/26/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E5%AD%97%E4%B8%B2%E5%92%8C%E7%AC%A6%E8%99%9F%E7%9A%84%E5%B7%AE%E5%88%A5/</url>
     <content><![CDATA[<hr>
