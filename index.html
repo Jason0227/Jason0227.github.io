@@ -119,7 +119,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">13</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -129,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">4</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -182,6 +182,111 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://jason0227.github.io/2022/11/30/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/phone.jpeg">
+      <meta itemprop="name" content="Jason Chiu">
+      <meta itemprop="description" content="轉職學習筆記 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Study Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/11/30/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Ruby新手村-方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2022-11-30 15:10:04 / 修改時間：15:28:58" itemprop="dateCreated datePublished" datetime="2022-11-30T15:10:04+08:00">2022-11-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby/" itemprop="url" rel="index"><span itemprop="name">Ruby</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：為何要使用方法?什麼是方法?如何使用(參數和引數、參數預設值、一個蘿菠一個坑、小括號省略、變數和方法同名)?方法和函數的差別?</strong>  </p>
+          </div></h1><hr>
+<h1 id="爲何要使用方法"><a href="#爲何要使用方法" class="headerlink" title="爲何要使用方法"></a><em><strong>爲何要使用方法</strong></em></h1><h2 id="1-當一件事情需要重複使用時"><a href="#1-當一件事情需要重複使用時" class="headerlink" title="1. 當一件事情需要重複使用時"></a>1. 當一件事情需要重複使用時</h2><p>譬如：判斷年齡的方法，走路的方法…</p>
+<h2 id="2-容易理解"><a href="#2-容易理解" class="headerlink" title="2. 容易理解"></a>2. 容易理解</h2><p>用方法來呈現，方便開發時閱讀與使用</p>
+<hr>
+<h1 id="什麼是方法"><a href="#什麼是方法" class="headerlink" title="什麼是方法"></a><em><strong>什麼是方法</strong></em></h1><h2 id="1-在Ruby中"><a href="#1-在Ruby中" class="headerlink" title="1. 在Ruby中"></a>1. 在Ruby中</h2><p>在Ruby的世界，幾乎都是物件，而每個物件有時會用到同樣的方法，簡單來說會做一樣的事，那件事我們稱為方法</p>
+<h2 id="2-語法"><a href="#2-語法" class="headerlink" title="2. 語法"></a>2. 語法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def method_name(param1, param2)      #方法名稱(參數1, 參數2)</span><br><span class="line"> # 方法內容</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-命名"><a href="#3-命名" class="headerlink" title="3. 命名"></a>3. 命名</h2><p>通常命名都採用蛇式命名法，而名字最好可以一眼就看出這個方法在做什麼最佳！</p>
+<hr>
+<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a><em><strong>如何使用</strong></em></h1><p>我們直接以例子說明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def say_hello_to(someone)               #我定義一個對某人(參數)說你好的方法</span><br><span class="line"> puts &quot;Hello, #&#123;someone&#125;&quot;               #這個方法會印出&quot;Hello, #&#123;對象&#125;&quot;</span><br><span class="line">end</span><br><span class="line">                                        #使用時直接打上方法名稱加上要帶入的名字(引數)</span><br><span class="line">say_hello_to( &#x27;佐助&#x27; )                   #印出 Hello, 佐助</span><br></pre></td></tr></table></figure>
+
+<p>在這個例子中有出現兩個陌生的名稱，參數和引數，他們是什麼？差在哪？</p>
+<h2 id="1-參數-vs-引數"><a href="#1-參數-vs-引數" class="headerlink" title="1. 參數 vs 引數"></a>1. 參數 vs 引數</h2><h3 id="1-參數-parameter-："><a href="#1-參數-parameter-：" class="headerlink" title="(1) 參數(parameter)："></a>(1) 參數(parameter)：</h3><p>在定義方法時，拿來當作引數的參考，方便帶入引數時使用，如果很難理解，就把它當成引數就好，他在方法的什麼地方出現，引數也會在那出現，譬如：someone</p>
+<h3 id="2-引數-argument-："><a href="#2-引數-argument-：" class="headerlink" title="(2) 引數(argument)："></a>(2) 引數(argument)：</h3><p>他是在使用方法時會一起被引入的物件，在方法中運作或者出現的地方，就是參數的地方，譬如：佐助</p>
+<p>在上面的例子當中someone就是參數，這樣不管是跟 ‘佐助’ 或 ‘鳴人’ 說你好，都需要參考someone的地方做引入</p>
+<h2 id="2-參數預設值"><a href="#2-參數預設值" class="headerlink" title="2. 參數預設值"></a>2. 參數預設值</h2><p>有時候會遇到使用方法時沒有對象(沒有引數)，這時我們會給參數一個預設值，如果找不到引數，就直接使用預設值，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def say_hello_t(someone = &quot;佐助&quot;)        #參數預設值寫法，預設對象為佐助</span><br><span class="line"> puts &quot;Hello, #&#123;someone&#125;&quot;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">say_hello_to( &#x27;鳴人&#x27; )                   #印出 Hello, 鳴人</span><br><span class="line">say_hello_to                            #印出 Hello, 佐助</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-一個蘿蔔一個坑"><a href="#3-一個蘿蔔一個坑" class="headerlink" title="3. 一個蘿蔔一個坑"></a>3. 一個蘿蔔一個坑</h2><p>在設計方法時，需要一個蘿菠一個坑，要有參數才能帶入一個引數，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def say_hello_to (someone)  #有參數的方法</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">def greeting                #沒參數的方法</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">say_hello_to &quot;佐助&quot;          #這個寫法可以，因為say_hello_to方法有參數，使用時也有引數</span><br><span class="line">say_hello_to                #這個寫法不行，因為say_hello_to方法沒有預設值，也沒引數</span><br><span class="line">greeting &quot;鳴人&quot;              #這個寫法不行，因為greeting方法沒有參數給引數參考</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-小括號省略"><a href="#4-小括號省略" class="headerlink" title="4. 小括號省略"></a>4. 小括號省略</h2><p>在Ruby的世界裡，為了讓程式碼更貼近人會說的話，所以有些地方會適時地省略，小括號就是其中一個，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">say_hello_to( &#x27;佐助&#x27; )       #印出 Hello, 佐助</span><br><span class="line"></span><br><span class="line">say_hello_to &#x27;佐助&#x27;          #此行效果跟上面的效果一樣，但更貼近人會說的話</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-變數和方法同名"><a href="#5-變數和方法同名" class="headerlink" title="5. 變數和方法同名"></a>5. 變數和方法同名</h2><p>在一堆程式碼當中，有時會遇到各種語法和物件都在同一份檔案當中，此時就會發生相牴觸或融合的事情，以變數和方法舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 18                      #宣告一個age變數為18</span><br><span class="line"></span><br><span class="line">def age                       #定義一個age的方法，而這個方法的小括號被省略了</span><br><span class="line"> return 20                    #這個方法是回傳20</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">puts age                      #會印出18</span><br><span class="line">puts age()                    #若要印出20的話要加小括號</span><br></pre></td></tr></table></figure>
+
+<p>上述的例子可以看到變數名和方法名都為age，此時當要印出(puts)age時，就會發生牴觸的事情，原因在於puts遇到這種情況會優先找變數，但如果要印出方法，就要加上省略的小括號，讓電腦知道這個age其實是方法age( )</p>
+<hr>
+<h1 id="方法-method-和函數-function-的差別"><a href="#方法-method-和函數-function-的差別" class="headerlink" title="方法(method)和函數(function)的差別"></a><em><strong>方法(method)和函數(function)的差別</strong></em></h1><p>對於程式設計，常常提到函數(function)，乍看下來跟方法(method)其實很像，但他們還是有不一樣的地方</p>
+<h2 id="1-方法-method"><a href="#1-方法-method" class="headerlink" title="1. 方法(method)"></a>1. 方法(method)</h2><p>他需要有作用的對象，就像是動詞不能單獨用，還需要主詞，當你說Hello時，一定會有對象對吧？</p>
+<h2 id="2-函數-function"><a href="#2-函數-function" class="headerlink" title="2. 函數(function)"></a>2. 函數(function)</h2><p>沒有作用對象，只會有輸入值和輸出值，在意的是帶入引數後，藉由函數產生了什麼結果</p>
+<hr>
+<p>以上就是關於Ruby的方法相關介紹， 之後持續更新文章，敬請期待～</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -529,7 +634,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -542,7 +647,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
