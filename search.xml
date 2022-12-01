@@ -32,47 +32,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ruby新手村-模組</title>
-    <url>/2022/11/28/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%A8%A1%E7%B5%84/</url>
-    <content><![CDATA[<hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
-            <p><strong>『本篇重點』：什麼是模組?如何使用模組在類別中?模組和類別的差異?</strong>  </p>
-          </div></h1><hr>
-<p>在之前的文章「Ruby新手村-物件導向程式設計（OOP）」中的最後有提到模組module，當時是以技能去解讀它，接下來就讓我們來看看什麼是模組吧～</p>
-<hr>
-<h1 id="什麼是模組"><a href="#什麼是模組" class="headerlink" title="什麼是模組"></a><em><strong>什麼是模組</strong></em></h1><h2 id="1-解釋："><a href="#1-解釋：" class="headerlink" title="1. 解釋："></a>1. 解釋：</h2><p>一項非繼承而來的額外技能，我可以藉由引入模組來使用它，像是狗狗學會[撿報紙]，我可以說我在『狗類別』裡面引入[撿報紙]的模組，貓咪學會[翻跟斗]，我可以說我在『貓類別』裡面引入[翻跟斗]的模組。</p>
-<h2 id="2-命名原則："><a href="#2-命名原則：" class="headerlink" title="2. 命名原則："></a>2. 命名原則：</h2><p>命名規定跟類別命名一樣，必須是常數</p>
-<h2 id="3-語法："><a href="#3-語法：" class="headerlink" title="3. 語法："></a>3. 語法：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">module ModuleName            </span><br><span class="line"> #此模組會做的事</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="如何使用模組在類別中"><a href="#如何使用模組在類別中" class="headerlink" title="如何使用模組在類別中"></a><em><strong>如何使用模組在類別中</strong></em></h1><h2 id="1-模組使用方式"><a href="#1-模組使用方式" class="headerlink" title="1. 模組使用方式"></a>1. 模組使用方式</h2><p>(1) 引入include，他作用在實體上面(也就是實體使用了模組這個方法)，所以稱此模組為實體方法，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#為了方便說明，模組內容的部分以中文表示，實際上要使用英文</span><br><span class="line">module DogSkill           #創造一個DogSkill狗技能模組</span><br><span class="line">  撿報紙                   #這個模組做的事情是撿報紙</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">class Dog</span><br><span class="line">  include DogSkill        #引入DogSkill狗技能這個模組在狗類別當中</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">lucky = Dog.new           #在狗類別創造一個叫lucky的狗狗</span><br><span class="line">lucky.撿報紙               #在lucky狗狗實體上使用撿報紙的技能，撿報紙就是實體方法</span><br></pre></td></tr></table></figure>
-
-<p>(2) 擴充extend，他作用在類別上面(也就是幫類別擴充方法)，所以稱此模組為類別方法，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#為了方便說明，模組內容的部分以中文表示，實際上要使用英文</span><br><span class="line">module CatSkill           #創造一個CatSkill貓技能模組</span><br><span class="line">  翻跟斗                   #這個模組做的事情是翻跟斗</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">class Cat</span><br><span class="line">  extend CatSkill         #擴充CatSkill貓技能這個模組在貓類別當中</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">Cat.翻跟斗                 #貓類別可以直接使用翻跟斗模組，所以說翻跟斗是類別方法</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="模組和類別的差異"><a href="#模組和類別的差異" class="headerlink" title="模組和類別的差異"></a><em><strong>模組和類別的差異</strong></em></h1><p>以之前提到的兩個故事為例</p>
-<h2 id="1-火影忍者："><a href="#1-火影忍者：" class="headerlink" title="1. 火影忍者："></a>1. 火影忍者：</h2><p>{佐助}的「寫輪眼」是『宇智坡』這個家族繼承而來，而[須佐能乎]是他後天自己學會的技能模組</p>
-<h2 id="2-貓狗大戰："><a href="#2-貓狗大戰：" class="headerlink" title="2. 貓狗大戰："></a>2. 貓狗大戰：</h2><p>『狗』並非天生就會[撿報紙]，『貓』並非天生就會[翻跟斗]</p>
-<h2 id="3-模組跟類別雖然很像，但他們還是有差別"><a href="#3-模組跟類別雖然很像，但他們還是有差別" class="headerlink" title="3. 模組跟類別雖然很像，但他們還是有差別:"></a>3. 模組跟類別雖然很像，但他們還是有差別:</h2><h3 id="1-模組沒有繼承功能，而類別有"><a href="#1-模組沒有繼承功能，而類別有" class="headerlink" title="(1) 模組沒有繼承功能，而類別有"></a>(1) 模組沒有繼承功能，而類別有</h3><p>如同上述[須佐能乎]、[撿報紙]、[翻跟斗]無法繼承</p>
-<h3 id="2-模組不能實體化，類別可以"><a href="#2-模組不能實體化，類別可以" class="headerlink" title="(2) 模組不能實體化，類別可以"></a>(2) 模組不能實體化，類別可以</h3><p>『貓類』可以創造很多不同名字的貓咪實體，而[翻跟斗]無法創造任何東西，而且從字面來看，應該很好理解～</p>
-<hr>
-<p>看完本篇模組介紹，我想大家對於「Ruby新手村-物件導向程式設計（OOP）」那篇的內容有更多的了解，之後還會有關於更多物件的相關原理及觀念會持續分享，敬請期待～</p>
-]]></content>
-      <categories>
-        <category>Ruby</category>
-      </categories>
-      <tags>
-        <tag>模組</tag>
-        <tag>類別</tag>
-        <tag>module</tag>
-        <tag>命名</tag>
-        <tag>include</tag>
-        <tag>extend</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ruby新手村-方法</title>
     <url>/2022/11/30/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<hr>
@@ -118,16 +77,57 @@
         <category>Ruby</category>
       </categories>
       <tags>
-        <tag>類別</tag>
-        <tag>命名</tag>
         <tag>方法</tag>
+        <tag>類別</tag>
         <tag>函數</tag>
         <tag>function</tag>
+        <tag>命名</tag>
         <tag>參數</tag>
         <tag>變數</tag>
         <tag>parameter</tag>
         <tag>引數</tag>
         <tag>argument</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ruby新手村-模組</title>
+    <url>/2022/11/28/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%A8%A1%E7%B5%84/</url>
+    <content><![CDATA[<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：什麼是模組?如何使用模組在類別中?模組和類別的差異?</strong>  </p>
+          </div></h1><hr>
+<p>在之前的文章「Ruby新手村-物件導向程式設計（OOP）」中的最後有提到模組module，當時是以技能去解讀它，接下來就讓我們來看看什麼是模組吧～</p>
+<hr>
+<h1 id="什麼是模組"><a href="#什麼是模組" class="headerlink" title="什麼是模組"></a><em><strong>什麼是模組</strong></em></h1><h2 id="1-解釋："><a href="#1-解釋：" class="headerlink" title="1. 解釋："></a>1. 解釋：</h2><p>一項非繼承而來的額外技能，我可以藉由引入模組來使用它，像是狗狗學會[撿報紙]，我可以說我在『狗類別』裡面引入[撿報紙]的模組，貓咪學會[翻跟斗]，我可以說我在『貓類別』裡面引入[翻跟斗]的模組。</p>
+<h2 id="2-命名原則："><a href="#2-命名原則：" class="headerlink" title="2. 命名原則："></a>2. 命名原則：</h2><p>命名規定跟類別命名一樣，必須是常數</p>
+<h2 id="3-語法："><a href="#3-語法：" class="headerlink" title="3. 語法："></a>3. 語法：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">module ModuleName            </span><br><span class="line"> #此模組會做的事</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="如何使用模組在類別中"><a href="#如何使用模組在類別中" class="headerlink" title="如何使用模組在類別中"></a><em><strong>如何使用模組在類別中</strong></em></h1><h2 id="1-模組使用方式"><a href="#1-模組使用方式" class="headerlink" title="1. 模組使用方式"></a>1. 模組使用方式</h2><p>(1) 引入include，他作用在實體上面(也就是實體使用了模組這個方法)，所以稱此模組為實體方法，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#為了方便說明，模組內容的部分以中文表示，實際上要使用英文</span><br><span class="line">module DogSkill           #創造一個DogSkill狗技能模組</span><br><span class="line">  撿報紙                   #這個模組做的事情是撿報紙</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">class Dog</span><br><span class="line">  include DogSkill        #引入DogSkill狗技能這個模組在狗類別當中</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">lucky = Dog.new           #在狗類別創造一個叫lucky的狗狗</span><br><span class="line">lucky.撿報紙               #在lucky狗狗實體上使用撿報紙的技能，撿報紙就是實體方法</span><br></pre></td></tr></table></figure>
+
+<p>(2) 擴充extend，他作用在類別上面(也就是幫類別擴充方法)，所以稱此模組為類別方法，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#為了方便說明，模組內容的部分以中文表示，實際上要使用英文</span><br><span class="line">module CatSkill           #創造一個CatSkill貓技能模組</span><br><span class="line">  翻跟斗                   #這個模組做的事情是翻跟斗</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">class Cat</span><br><span class="line">  extend CatSkill         #擴充CatSkill貓技能這個模組在貓類別當中</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">Cat.翻跟斗                 #貓類別可以直接使用翻跟斗模組，所以說翻跟斗是類別方法</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="模組和類別的差異"><a href="#模組和類別的差異" class="headerlink" title="模組和類別的差異"></a><em><strong>模組和類別的差異</strong></em></h1><p>以之前提到的兩個故事為例</p>
+<h2 id="1-火影忍者："><a href="#1-火影忍者：" class="headerlink" title="1. 火影忍者："></a>1. 火影忍者：</h2><p>{佐助}的「寫輪眼」是『宇智坡』這個家族繼承而來，而[須佐能乎]是他後天自己學會的技能模組</p>
+<h2 id="2-貓狗大戰："><a href="#2-貓狗大戰：" class="headerlink" title="2. 貓狗大戰："></a>2. 貓狗大戰：</h2><p>『狗』並非天生就會[撿報紙]，『貓』並非天生就會[翻跟斗]</p>
+<h2 id="3-模組跟類別雖然很像，但他們還是有差別"><a href="#3-模組跟類別雖然很像，但他們還是有差別" class="headerlink" title="3. 模組跟類別雖然很像，但他們還是有差別:"></a>3. 模組跟類別雖然很像，但他們還是有差別:</h2><h3 id="1-模組沒有繼承功能，而類別有"><a href="#1-模組沒有繼承功能，而類別有" class="headerlink" title="(1) 模組沒有繼承功能，而類別有"></a>(1) 模組沒有繼承功能，而類別有</h3><p>如同上述[須佐能乎]、[撿報紙]、[翻跟斗]無法繼承</p>
+<h3 id="2-模組不能實體化，類別可以"><a href="#2-模組不能實體化，類別可以" class="headerlink" title="(2) 模組不能實體化，類別可以"></a>(2) 模組不能實體化，類別可以</h3><p>『貓類』可以創造很多不同名字的貓咪實體，而[翻跟斗]無法創造任何東西，而且從字面來看，應該很好理解～</p>
+<hr>
+<p>看完本篇模組介紹，我想大家對於「Ruby新手村-物件導向程式設計（OOP）」那篇的內容有更多的了解，之後還會有關於更多物件的相關原理及觀念會持續分享，敬請期待～</p>
+]]></content>
+      <categories>
+        <category>Ruby</category>
+      </categories>
+      <tags>
+        <tag>類別</tag>
+        <tag>命名</tag>
+        <tag>模組</tag>
+        <tag>module</tag>
+        <tag>include</tag>
+        <tag>extend</tag>
       </tags>
   </entry>
   <entry>
@@ -172,6 +172,64 @@
         <tag>繼承</tag>
         <tag>物件</tag>
         <tag>Block</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ruby新手村-變數、常數</title>
+    <url>/2022/12/01/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E8%AE%8A%E6%95%B8%E3%80%81%E5%B8%B8%E6%95%B8/</url>
+    <content><![CDATA[<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：變數、常數、命名慣例</strong>  </p>
+          </div></h1><hr>
+<h1 id="變數"><a href="#變數" class="headerlink" title="變數"></a><em><strong>變數</strong></em></h1><h2 id="1-簡介："><a href="#1-簡介：" class="headerlink" title="1. 簡介："></a>1. 簡介：</h2><p>變數就像標籤一樣，本身沒有型態</p>
+<h2 id="2-變數種類之命名樣式："><a href="#2-變數種類之命名樣式：" class="headerlink" title="2. 變數種類之命名樣式："></a>2. 變數種類之命名樣式：</h2><p>變數命名時，以作用對象去取名，譬如：作用對象是那個區域，就是區域變數;作用對象是實體，就是實體變數。</p>
+<p><img src="https://i.imgur.com/NnBk6vq.jpg"></p>
+<h2 id="3-變數指定"><a href="#3-變數指定" class="headerlink" title="3. 變數指定"></a>3. 變數指定</h2><p>等號在程式裡面是指定的意思</p>
+<h3 id="1-一次指定一個變數"><a href="#1-一次指定一個變數" class="headerlink" title="(1) 一次指定一個變數"></a>(1) 一次指定一個變數</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a = 1                #指定a變數為數字1</span><br><span class="line"></span><br><span class="line">comic = &quot;火影忍者”    #指定comic變數為字串火影忍者</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-一次指定多個變數"><a href="#2-一次指定多個變數" class="headerlink" title="(2) 一次指定多個變數"></a>(2) 一次指定多個變數</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">x, y, z = [1, 2, 3]    #陣列形式，指定x邊數為1，指定y邊數為2，指定z邊數為3</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-使用變數"><a href="#4-使用變數" class="headerlink" title="4. 使用變數"></a>4. 使用變數</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">x, y, z = [1, 2, 3]             #多個變數指定</span><br><span class="line"></span><br><span class="line">a = 1                           #一個變數指定</span><br><span class="line"></span><br><span class="line">comic = &quot;火影忍者&quot;               #一個變數指定    </span><br><span class="line"></span><br><span class="line">puts a                          #會印出1               </span><br><span class="line"></span><br><span class="line">puts z                          #會印出3</span><br><span class="line"></span><br><span class="line">puts comic                      #會印出&quot;火影忍者”</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = a + 2                       可以寫成 a +=2</span><br><span class="line"></span><br><span class="line">a = a ∥ 2 可以寫成 a ∥= 2</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-常用變數運算補充"><a href="#5-常用變數運算補充" class="headerlink" title="5. 常用變數運算補充"></a>5. 常用變數運算補充</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a = a + 2           #常用於for迴圈，每一次都是原本的變數a再加2                       </span><br><span class="line">#可以寫成 </span><br><span class="line">a +=2</span><br><span class="line"></span><br><span class="line">a = a ∥ 2           #這段的意思是a等於a或2，意思是說如果a的值有設定就維持原貌，如果沒設定就給他2的值</span><br><span class="line">#可以寫成 </span><br><span class="line">a ∥= 2</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Ruby常見無效變數命名"><a href="#6-Ruby常見無效變數命名" class="headerlink" title="6. Ruby常見無效變數命名"></a>6. Ruby常見無效變數命名</h2><h3 id="1-開頭是數字"><a href="#1-開頭是數字" class="headerlink" title="(1) 開頭是數字"></a>(1) 開頭是數字</h3><p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">9pizza = &quot;好吃&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-命名時盡量不要用關鍵字與保留字-keyword-reserved-word-來命名"><a href="#2-命名時盡量不要用關鍵字與保留字-keyword-reserved-word-來命名" class="headerlink" title="(2) 命名時盡量不要用關鍵字與保留字(keyword $ reserved word)來命名"></a>(2) 命名時盡量不要用關鍵字與保留字(keyword $ reserved word)來命名</h3><p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if = &quot;如果&quot;</span><br><span class="line">all = &quot;全部&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-變數名稱不能包含空格"><a href="#3-變數名稱不能包含空格" class="headerlink" title="(3) 變數名稱不能包含空格"></a>(3) 變數名稱不能包含空格</h3><p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">say hello to</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-變數名字連接不能用中線"><a href="#4-變數名字連接不能用中線" class="headerlink" title="(4) 變數名字連接不能用中線"></a>(4) 變數名字連接不能用中線</h3><p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">say-hello-to</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="常數"><a href="#常數" class="headerlink" title="常數"></a><em><strong>常數</strong></em></h1><h2 id="1-簡介：-1"><a href="#1-簡介：-1" class="headerlink" title="1. 簡介："></a>1. 簡介：</h2><p>常數是不能被修改的，但在ruby的世界可以!</p>
+<h2 id="2-命名規則："><a href="#2-命名規則：" class="headerlink" title="2. 命名規則："></a>2. 命名規則：</h2><p>需用大寫字母開頭，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Book = “ruby book”</span><br><span class="line"></span><br><span class="line">User = “hello, user”</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="命名慣例"><a href="#命名慣例" class="headerlink" title="命名慣例"></a><em><strong>命名慣例</strong></em></h1><h2 id="1-駝式命名法-小駝峰camelCase-、-大駝峰Pascal-Case"><a href="#1-駝式命名法-小駝峰camelCase-、-大駝峰Pascal-Case" class="headerlink" title="1. 駝式命名法(小駝峰camelCase)、(大駝峰Pascal Case)"></a>1. 駝式命名法(小駝峰camelCase)、(大駝峰Pascal Case)</h2><h3 id="1-簡介：-2"><a href="#1-簡介：-2" class="headerlink" title="(1) 簡介："></a>(1) 簡介：</h3><p>看起來很像駱駝峰，高高低低的</p>
+<h3 id="2-舉例："><a href="#2-舉例：" class="headerlink" title="(2) 舉例："></a>(2) 舉例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#小駝峰，名字的第一個字母小寫</span><br><span class="line">firstName、parseDataString</span><br><span class="line"></span><br><span class="line">#大駝峰，第一個字母都大寫</span><br><span class="line">FirstName、ParseDataString</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-常使用此命名的程式："><a href="#3-常使用此命名的程式：" class="headerlink" title="(3) 常使用此命名的程式："></a>(3) 常使用此命名的程式：</h3><p>Java、Ruby(常用在命名常數時)</p>
+<h2 id="2-蛇式命名法-snake-case"><a href="#2-蛇式命名法-snake-case" class="headerlink" title="2. 蛇式命名法(snake_case)"></a>2. 蛇式命名法(snake_case)</h2><h3 id="1-簡介：-3"><a href="#1-簡介：-3" class="headerlink" title="(1) 簡介："></a>(1) 簡介：</h3><p>很像一條蛇，把每個字連在一起</p>
+<h3 id="2-舉例：-1"><a href="#2-舉例：-1" class="headerlink" title="(2) 舉例："></a>(2) 舉例：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">first_name、parse_data_string</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-常使用此命名的程式：-1"><a href="#3-常使用此命名的程式：-1" class="headerlink" title="(3) 常使用此命名的程式："></a>(3) 常使用此命名的程式：</h3><p>Python、Ruby</p>
+<hr>
+<p>以上就是關於Ruby的變數和常數相關介紹， 持續更新文章，敬請期待～</p>
+]]></content>
+      <categories>
+        <category>Ruby</category>
+      </categories>
+      <tags>
+        <tag>命名</tag>
+        <tag>變數</tag>
+        <tag>常數</tag>
+        <tag>無效變數命名</tag>
       </tags>
   </entry>
 </search>
