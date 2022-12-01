@@ -211,7 +211,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2022-12-01 07:15:29 / 修改時間：08:12:15" itemprop="dateCreated datePublished" datetime="2022-12-01T07:15:29+08:00">2022-12-01</time>
+              <time title="創建時間：2022-12-01 07:15:29 / 修改時間：10:42:41" itemprop="dateCreated datePublished" datetime="2022-12-01T07:15:29+08:00">2022-12-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,50 +235,21 @@
 
       
           <hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+<h1 id><a href="#" class="headerlink" title></a><div class="note info">
             <p><strong>『本篇重點』：變數、常數、命名慣例</strong>  </p>
           </div></h1><hr>
 <h1 id="變數"><a href="#變數" class="headerlink" title="變數"></a><em><strong>變數</strong></em></h1><h2 id="1-簡介："><a href="#1-簡介：" class="headerlink" title="1. 簡介："></a>1. 簡介：</h2><p>變數就像標籤一樣，本身沒有型態</p>
 <h2 id="2-變數種類之命名樣式："><a href="#2-變數種類之命名樣式：" class="headerlink" title="2. 變數種類之命名樣式："></a>2. 變數種類之命名樣式：</h2><p>變數命名時，以作用對象去取名，譬如：作用對象是那個區域，就是區域變數;作用對象是實體，就是實體變數。</p>
 <p><img src="https://i.imgur.com/NnBk6vq.jpg"></p>
-<h2 id="3-變數指定"><a href="#3-變數指定" class="headerlink" title="3. 變數指定"></a>3. 變數指定</h2><p>等號在程式裡面是指定的意思</p>
-<h3 id="1-一次指定一個變數"><a href="#1-一次指定一個變數" class="headerlink" title="(1) 一次指定一個變數"></a>(1) 一次指定一個變數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = 1                #指定a變數為數字1</span><br><span class="line"></span><br><span class="line">comic = &quot;火影忍者”    #指定comic變數為字串火影忍者</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-一次指定多個變數"><a href="#2-一次指定多個變數" class="headerlink" title="(2) 一次指定多個變數"></a>(2) 一次指定多個變數</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x, y, z = [1, 2, 3]    #陣列形式，指定x邊數為1，指定y邊數為2，指定z邊數為3</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-使用變數"><a href="#4-使用變數" class="headerlink" title="4. 使用變數"></a>4. 使用變數</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">x, y, z = [1, 2, 3]             #多個變數指定</span><br><span class="line"></span><br><span class="line">a = 1                           #一個變數指定</span><br><span class="line"></span><br><span class="line">comic = &quot;火影忍者&quot;               #一個變數指定    </span><br><span class="line"></span><br><span class="line">puts a                          #會印出1               </span><br><span class="line"></span><br><span class="line">puts z                          #會印出3</span><br><span class="line"></span><br><span class="line">puts comic                      #會印出&quot;火影忍者”</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = a + 2                       可以寫成 a +=2</span><br><span class="line"></span><br><span class="line">a = a ∥ 2 可以寫成 a ∥= 2</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-常用變數運算補充"><a href="#5-常用變數運算補充" class="headerlink" title="5. 常用變數運算補充"></a>5. 常用變數運算補充</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = a + 2           #常用於for迴圈，每一次都是原本的變數a再加2                       </span><br><span class="line">#可以寫成 </span><br><span class="line">a +=2</span><br><span class="line"></span><br><span class="line">a = a ∥ 2           #這段的意思是a等於a或2，意思是說如果a的值有設定就維持原貌，如果沒設定就給他2的值</span><br><span class="line">#可以寫成 </span><br><span class="line">a ∥= 2</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-Ruby常見無效變數命名"><a href="#6-Ruby常見無效變數命名" class="headerlink" title="6. Ruby常見無效變數命名"></a>6. Ruby常見無效變數命名</h2><h3 id="1-開頭是數字"><a href="#1-開頭是數字" class="headerlink" title="(1) 開頭是數字"></a>(1) 開頭是數字</h3><p>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9pizza = &quot;好吃&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-命名時盡量不要用關鍵字與保留字-keyword-reserved-word-來命名"><a href="#2-命名時盡量不要用關鍵字與保留字-keyword-reserved-word-來命名" class="headerlink" title="(2) 命名時盡量不要用關鍵字與保留字(keyword $ reserved word)來命名"></a>(2) 命名時盡量不要用關鍵字與保留字(keyword $ reserved word)來命名</h3><p>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if = &quot;如果&quot;</span><br><span class="line">all = &quot;全部&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-變數名稱不能包含空格"><a href="#3-變數名稱不能包含空格" class="headerlink" title="(3) 變數名稱不能包含空格"></a>(3) 變數名稱不能包含空格</h3><p>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say hello to</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-變數名字連接不能用中線"><a href="#4-變數名字連接不能用中線" class="headerlink" title="(4) 變數名字連接不能用中線"></a>(4) 變數名字連接不能用中線</h3><p>例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say-hello-to</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="常數"><a href="#常數" class="headerlink" title="常數"></a><em><strong>常數</strong></em></h1><h2 id="1-簡介：-1"><a href="#1-簡介：-1" class="headerlink" title="1. 簡介："></a>1. 簡介：</h2><p>常數是不能被修改的，但在ruby的世界可以!</p>
-<h2 id="2-命名規則："><a href="#2-命名規則：" class="headerlink" title="2. 命名規則："></a>2. 命名規則：</h2><p>需用大寫字母開頭，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Book = “ruby book”</span><br><span class="line"></span><br><span class="line">User = “hello, user”</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="命名慣例"><a href="#命名慣例" class="headerlink" title="命名慣例"></a><em><strong>命名慣例</strong></em></h1><h2 id="1-駝式命名法-小駝峰camelCase-、-大駝峰Pascal-Case"><a href="#1-駝式命名法-小駝峰camelCase-、-大駝峰Pascal-Case" class="headerlink" title="1. 駝式命名法(小駝峰camelCase)、(大駝峰Pascal Case)"></a>1. 駝式命名法(小駝峰camelCase)、(大駝峰Pascal Case)</h2><h3 id="1-簡介：-2"><a href="#1-簡介：-2" class="headerlink" title="(1) 簡介："></a>(1) 簡介：</h3><p>看起來很像駱駝峰，高高低低的</p>
-<h3 id="2-舉例："><a href="#2-舉例：" class="headerlink" title="(2) 舉例："></a>(2) 舉例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#小駝峰，名字的第一個字母小寫</span><br><span class="line">firstName、parseDataString</span><br><span class="line"></span><br><span class="line">#大駝峰，第一個字母都大寫</span><br><span class="line">FirstName、ParseDataString</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-常使用此命名的程式："><a href="#3-常使用此命名的程式：" class="headerlink" title="(3) 常使用此命名的程式："></a>(3) 常使用此命名的程式：</h3><p>Java、Ruby(常用在命名常數時)</p>
-<h2 id="2-蛇式命名法-snake-case"><a href="#2-蛇式命名法-snake-case" class="headerlink" title="2. 蛇式命名法(snake_case)"></a>2. 蛇式命名法(snake_case)</h2><h3 id="1-簡介：-3"><a href="#1-簡介：-3" class="headerlink" title="(1) 簡介："></a>(1) 簡介：</h3><p>很像一條蛇，把每個字連在一起</p>
-<h3 id="2-舉例：-1"><a href="#2-舉例：-1" class="headerlink" title="(2) 舉例："></a>(2) 舉例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">first_name、parse_data_string</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-常使用此命名的程式：-1"><a href="#3-常使用此命名的程式：-1" class="headerlink" title="(3) 常使用此命名的程式："></a>(3) 常使用此命名的程式：</h3><p>Python、Ruby</p>
-<hr>
-<p>以上就是關於Ruby的變數和常數相關介紹， 持續更新文章，敬請期待～</p>
-
+<h2 id="3-變數指定"><a href="#3-變數指定" class="headerlink" title="3. 變數指定"></a>3. 變數指定</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/12/01/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E8%AE%8A%E6%95%B8%E3%80%81%E5%B8%B8%E6%95%B8/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -320,10 +291,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2022-11-30 15:10:04 / 修改時間：15:28:58" itemprop="dateCreated datePublished" datetime="2022-11-30T15:10:04+08:00">2022-11-30</time>
+              <time title="創建時間：2022-11-30 15:10:04" itemprop="dateCreated datePublished" datetime="2022-11-30T15:10:04+08:00">2022-11-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-12-01 10:43:30" itemprop="dateModified" datetime="2022-12-01T10:43:30+08:00">2022-12-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -346,44 +323,21 @@
 
       
           <hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+<h1 id><a href="#" class="headerlink" title></a><div class="note info">
             <p><strong>『本篇重點』：為何要使用方法?什麼是方法?如何使用(參數和引數、參數預設值、一個蘿菠一個坑、小括號省略、變數和方法同名)?方法和函數的差別?</strong>  </p>
           </div></h1><hr>
 <h1 id="爲何要使用方法"><a href="#爲何要使用方法" class="headerlink" title="爲何要使用方法"></a><em><strong>爲何要使用方法</strong></em></h1><h2 id="1-當一件事情需要重複使用時"><a href="#1-當一件事情需要重複使用時" class="headerlink" title="1. 當一件事情需要重複使用時"></a>1. 當一件事情需要重複使用時</h2><p>譬如：判斷年齡的方法，走路的方法…</p>
 <h2 id="2-容易理解"><a href="#2-容易理解" class="headerlink" title="2. 容易理解"></a>2. 容易理解</h2><p>用方法來呈現，方便開發時閱讀與使用</p>
 <hr>
-<h1 id="什麼是方法"><a href="#什麼是方法" class="headerlink" title="什麼是方法"></a><em><strong>什麼是方法</strong></em></h1><h2 id="1-在Ruby中"><a href="#1-在Ruby中" class="headerlink" title="1. 在Ruby中"></a>1. 在Ruby中</h2><p>在Ruby的世界，幾乎都是物件，而每個物件有時會用到同樣的方法，簡單來說會做一樣的事，那件事我們稱為方法</p>
-<h2 id="2-語法"><a href="#2-語法" class="headerlink" title="2. 語法"></a>2. 語法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def method_name(param1, param2)      #方法名稱(參數1, 參數2)</span><br><span class="line"> # 方法內容</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-命名"><a href="#3-命名" class="headerlink" title="3. 命名"></a>3. 命名</h2><p>通常命名都採用蛇式命名法，而名字最好可以一眼就看出這個方法在做什麼最佳！</p>
-<hr>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a><em><strong>如何使用</strong></em></h1><p>我們直接以例子說明</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def say_hello_to(someone)               #我定義一個對某人(參數)說你好的方法</span><br><span class="line"> puts &quot;Hello, #&#123;someone&#125;&quot;               #這個方法會印出&quot;Hello, #&#123;對象&#125;&quot;</span><br><span class="line">end</span><br><span class="line">                                        #使用時直接打上方法名稱加上要帶入的名字(引數)</span><br><span class="line">say_hello_to( &#x27;佐助&#x27; )                   #印出 Hello, 佐助</span><br></pre></td></tr></table></figure>
-
-<p>在這個例子中有出現兩個陌生的名稱，參數和引數，他們是什麼？差在哪？</p>
-<h2 id="1-參數-vs-引數"><a href="#1-參數-vs-引數" class="headerlink" title="1. 參數 vs 引數"></a>1. 參數 vs 引數</h2><h3 id="1-參數-parameter-："><a href="#1-參數-parameter-：" class="headerlink" title="(1) 參數(parameter)："></a>(1) 參數(parameter)：</h3><p>在定義方法時，拿來當作引數的參考，方便帶入引數時使用，如果很難理解，就把它當成引數就好，他在方法的什麼地方出現，引數也會在那出現，譬如：someone</p>
-<h3 id="2-引數-argument-："><a href="#2-引數-argument-：" class="headerlink" title="(2) 引數(argument)："></a>(2) 引數(argument)：</h3><p>他是在使用方法時會一起被引入的物件，在方法中運作或者出現的地方，就是參數的地方，譬如：佐助</p>
-<p>在上面的例子當中someone就是參數，這樣不管是跟 ‘佐助’ 或 ‘鳴人’ 說你好，都需要參考someone的地方做引入</p>
-<h2 id="2-參數預設值"><a href="#2-參數預設值" class="headerlink" title="2. 參數預設值"></a>2. 參數預設值</h2><p>有時候會遇到使用方法時沒有對象(沒有引數)，這時我們會給參數一個預設值，如果找不到引數，就直接使用預設值，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def say_hello_t(someone = &quot;佐助&quot;)        #參數預設值寫法，預設對象為佐助</span><br><span class="line"> puts &quot;Hello, #&#123;someone&#125;&quot;</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">say_hello_to( &#x27;鳴人&#x27; )                   #印出 Hello, 鳴人</span><br><span class="line">say_hello_to                            #印出 Hello, 佐助</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-一個蘿蔔一個坑"><a href="#3-一個蘿蔔一個坑" class="headerlink" title="3. 一個蘿蔔一個坑"></a>3. 一個蘿蔔一個坑</h2><p>在設計方法時，需要一個蘿菠一個坑，要有參數才能帶入一個引數，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def say_hello_to (someone)  #有參數的方法</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">def greeting                #沒參數的方法</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">say_hello_to &quot;佐助&quot;          #這個寫法可以，因為say_hello_to方法有參數，使用時也有引數</span><br><span class="line">say_hello_to                #這個寫法不行，因為say_hello_to方法沒有預設值，也沒引數</span><br><span class="line">greeting &quot;鳴人&quot;              #這個寫法不行，因為greeting方法沒有參數給引數參考</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-小括號省略"><a href="#4-小括號省略" class="headerlink" title="4. 小括號省略"></a>4. 小括號省略</h2><p>在Ruby的世界裡，為了讓程式碼更貼近人會說的話，所以有些地方會適時地省略，小括號就是其中一個，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">say_hello_to( &#x27;佐助&#x27; )       #印出 Hello, 佐助</span><br><span class="line"></span><br><span class="line">say_hello_to &#x27;佐助&#x27;          #此行效果跟上面的效果一樣，但更貼近人會說的話</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-變數和方法同名"><a href="#5-變數和方法同名" class="headerlink" title="5. 變數和方法同名"></a>5. 變數和方法同名</h2><p>在一堆程式碼當中，有時會遇到各種語法和物件都在同一份檔案當中，此時就會發生相牴觸或融合的事情，以變數和方法舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = 18                      #宣告一個age變數為18</span><br><span class="line"></span><br><span class="line">def age                       #定義一個age的方法，而這個方法的小括號被省略了</span><br><span class="line"> return 20                    #這個方法是回傳20</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">puts age                      #會印出18</span><br><span class="line">puts age()                    #若要印出20的話要加小括號</span><br></pre></td></tr></table></figure>
-
-<p>上述的例子可以看到變數名和方法名都為age，此時當要印出(puts)age時，就會發生牴觸的事情，原因在於puts遇到這種情況會優先找變數，但如果要印出方法，就要加上省略的小括號，讓電腦知道這個age其實是方法age( )</p>
-<hr>
-<h1 id="方法-method-和函數-function-的差別"><a href="#方法-method-和函數-function-的差別" class="headerlink" title="方法(method)和函數(function)的差別"></a><em><strong>方法(method)和函數(function)的差別</strong></em></h1><p>對於程式設計，常常提到函數(function)，乍看下來跟方法(method)其實很像，但他們還是有不一樣的地方</p>
-<h2 id="1-方法-method"><a href="#1-方法-method" class="headerlink" title="1. 方法(method)"></a>1. 方法(method)</h2><p>他需要有作用的對象，就像是動詞不能單獨用，還需要主詞，當你說Hello時，一定會有對象對吧？</p>
-<h2 id="2-函數-function"><a href="#2-函數-function" class="headerlink" title="2. 函數(function)"></a>2. 函數(function)</h2><p>沒有作用對象，只會有輸入值和輸出值，在意的是帶入引數後，藉由函數產生了什麼結果</p>
-<hr>
-<p>以上就是關於Ruby的方法相關介紹， 之後持續更新文章，敬請期待～</p>
-
+<h1 id="什麼是方法"><a href="#什麼是方法" class="headerlink" title="什麼是方法"></a><em><strong>什麼是方法</strong></em></h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/30/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%96%B9%E6%B3%95/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -425,10 +379,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2022-11-28 22:53:53 / 修改時間：23:09:44" itemprop="dateCreated datePublished" datetime="2022-11-28T22:53:53+08:00">2022-11-28</time>
+              <time title="創建時間：2022-11-28 22:53:53" itemprop="dateCreated datePublished" datetime="2022-11-28T22:53:53+08:00">2022-11-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-12-01 10:43:15" itemprop="dateModified" datetime="2022-12-01T10:43:15+08:00">2022-12-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -451,31 +411,21 @@
 
       
           <hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+<h1 id><a href="#" class="headerlink" title></a><div class="note info">
             <p><strong>『本篇重點』：什麼是模組?如何使用模組在類別中?模組和類別的差異?</strong>  </p>
           </div></h1><hr>
 <p>在之前的文章「Ruby新手村-物件導向程式設計（OOP）」中的最後有提到模組module，當時是以技能去解讀它，接下來就讓我們來看看什麼是模組吧～</p>
 <hr>
 <h1 id="什麼是模組"><a href="#什麼是模組" class="headerlink" title="什麼是模組"></a><em><strong>什麼是模組</strong></em></h1><h2 id="1-解釋："><a href="#1-解釋：" class="headerlink" title="1. 解釋："></a>1. 解釋：</h2><p>一項非繼承而來的額外技能，我可以藉由引入模組來使用它，像是狗狗學會[撿報紙]，我可以說我在『狗類別』裡面引入[撿報紙]的模組，貓咪學會[翻跟斗]，我可以說我在『貓類別』裡面引入[翻跟斗]的模組。</p>
 <h2 id="2-命名原則："><a href="#2-命名原則：" class="headerlink" title="2. 命名原則："></a>2. 命名原則：</h2><p>命名規定跟類別命名一樣，必須是常數</p>
-<h2 id="3-語法："><a href="#3-語法：" class="headerlink" title="3. 語法："></a>3. 語法：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module ModuleName            </span><br><span class="line"> #此模組會做的事</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="如何使用模組在類別中"><a href="#如何使用模組在類別中" class="headerlink" title="如何使用模組在類別中"></a><em><strong>如何使用模組在類別中</strong></em></h1><h2 id="1-模組使用方式"><a href="#1-模組使用方式" class="headerlink" title="1. 模組使用方式"></a>1. 模組使用方式</h2><p>(1) 引入include，他作用在實體上面(也就是實體使用了模組這個方法)，所以稱此模組為實體方法，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#為了方便說明，模組內容的部分以中文表示，實際上要使用英文</span><br><span class="line">module DogSkill           #創造一個DogSkill狗技能模組</span><br><span class="line">  撿報紙                   #這個模組做的事情是撿報紙</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">class Dog</span><br><span class="line">  include DogSkill        #引入DogSkill狗技能這個模組在狗類別當中</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">lucky = Dog.new           #在狗類別創造一個叫lucky的狗狗</span><br><span class="line">lucky.撿報紙               #在lucky狗狗實體上使用撿報紙的技能，撿報紙就是實體方法</span><br></pre></td></tr></table></figure>
-
-<p>(2) 擴充extend，他作用在類別上面(也就是幫類別擴充方法)，所以稱此模組為類別方法，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#為了方便說明，模組內容的部分以中文表示，實際上要使用英文</span><br><span class="line">module CatSkill           #創造一個CatSkill貓技能模組</span><br><span class="line">  翻跟斗                   #這個模組做的事情是翻跟斗</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">class Cat</span><br><span class="line">  extend CatSkill         #擴充CatSkill貓技能這個模組在貓類別當中</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">Cat.翻跟斗                 #貓類別可以直接使用翻跟斗模組，所以說翻跟斗是類別方法</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="模組和類別的差異"><a href="#模組和類別的差異" class="headerlink" title="模組和類別的差異"></a><em><strong>模組和類別的差異</strong></em></h1><p>以之前提到的兩個故事為例</p>
-<h2 id="1-火影忍者："><a href="#1-火影忍者：" class="headerlink" title="1. 火影忍者："></a>1. 火影忍者：</h2><p>{佐助}的「寫輪眼」是『宇智坡』這個家族繼承而來，而[須佐能乎]是他後天自己學會的技能模組</p>
-<h2 id="2-貓狗大戰："><a href="#2-貓狗大戰：" class="headerlink" title="2. 貓狗大戰："></a>2. 貓狗大戰：</h2><p>『狗』並非天生就會[撿報紙]，『貓』並非天生就會[翻跟斗]</p>
-<h2 id="3-模組跟類別雖然很像，但他們還是有差別"><a href="#3-模組跟類別雖然很像，但他們還是有差別" class="headerlink" title="3. 模組跟類別雖然很像，但他們還是有差別:"></a>3. 模組跟類別雖然很像，但他們還是有差別:</h2><h3 id="1-模組沒有繼承功能，而類別有"><a href="#1-模組沒有繼承功能，而類別有" class="headerlink" title="(1) 模組沒有繼承功能，而類別有"></a>(1) 模組沒有繼承功能，而類別有</h3><p>如同上述[須佐能乎]、[撿報紙]、[翻跟斗]無法繼承</p>
-<h3 id="2-模組不能實體化，類別可以"><a href="#2-模組不能實體化，類別可以" class="headerlink" title="(2) 模組不能實體化，類別可以"></a>(2) 模組不能實體化，類別可以</h3><p>『貓類』可以創造很多不同名字的貓咪實體，而[翻跟斗]無法創造任何東西，而且從字面來看，應該很好理解～</p>
-<hr>
-<p>看完本篇模組介紹，我想大家對於「Ruby新手村-物件導向程式設計（OOP）」那篇的內容有更多的了解，之後還會有關於更多物件的相關原理及觀念會持續分享，敬請期待～</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/28/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%A8%A1%E7%B5%84/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -517,10 +467,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2022-11-28 00:29:53 / 修改時間：00:55:19" itemprop="dateCreated datePublished" datetime="2022-11-28T00:29:53+08:00">2022-11-28</time>
+              <time title="創建時間：2022-11-28 00:29:53" itemprop="dateCreated datePublished" datetime="2022-11-28T00:29:53+08:00">2022-11-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-12-01 10:43:19" itemprop="dateModified" datetime="2022-12-01T10:43:19+08:00">2022-12-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -543,33 +499,21 @@
 
       
           <hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+<h1 id><a href="#" class="headerlink" title></a><div class="note info">
             <p><strong>『本篇重點』：兩個故事，物件導向程式設計簡介，為何要使用OOP?什麼是類別?什麼是實體?什麼是繼承?故事講解</strong>  </p>
           </div></h1><hr>
 <h1 id="兩個故事"><a href="#兩個故事" class="headerlink" title="兩個故事"></a><em><strong>兩個故事</strong></em></h1><p>為了方便大家理解專業術語，我們先來聽聽兩個故事</p>
 <h2 id="1-火影忍者："><a href="#1-火影忍者：" class="headerlink" title="1. 火影忍者："></a>1. 火影忍者：</h2><p>不知大家有沒有看過火影忍者(完全沒看過說不過去拉！)，看過的人都知道宅女男神{佐助}，他的來自『宇智波』家族，招牌招式莫過於「血輪眼了」，當然還有更帥的招式[須佐能乎]</p>
 <h2 id="2-貓狗大戰："><a href="#2-貓狗大戰：" class="headerlink" title="2. 貓狗大戰："></a>2. 貓狗大戰：</h2><p>常常大家都會問你是『貓』派還是『狗』派？想必大家都有被某種『動物』可愛模樣融化的經驗，或許是一個叫{kitty}『貓』的「傲嬌個性」不時還會[討摸]，有機會還可以訓練[翻跟斗]，還是叫{lucky}『狗』的「效忠個性」總是看著主人[搖尾巴]，還可以訓練他們[拿報紙]</p>
 <p>聽完這兩個完全不一樣的故事，是不是很莫名其妙，哈哈，但其實針對故事內的索引號，可以套用到今天要講的內容中</p>
-<hr>
-<h1 id="物件導向程式設計-OOP-簡介"><a href="#物件導向程式設計-OOP-簡介" class="headerlink" title="物件導向程式設計(OOP)簡介"></a><em><strong>物件導向程式設計(OOP)簡介</strong></em></h1><p><img src="https://i.imgur.com/wo1IIPn.png"></p>
-<h2 id="1-什麼是物件"><a href="#1-什麼是物件" class="headerlink" title="1.什麼是物件:"></a>1.什麼是物件:</h2><p>物件 ＝ 狀態（名詞）＋ 行為（動詞）</p>
-<h2 id="2-為何要使用oop"><a href="#2-為何要使用oop" class="headerlink" title="2.為何要使用oop:"></a>2.為何要使用oop:</h2><p>為了用擬人化的方式去做分類和操作，讓程式碼更容易使用和理解</p>
-<p><strong>[冷知識]：在Ruby裡幾乎什麼東西都是物件，那什麼不是物件？</strong></p>
-<p>答案是：Block 和 方法</p>
-<hr>
-<h1 id="什麼是類別-class"><a href="#什麼是類別-class" class="headerlink" title="什麼是類別(class)"></a><em><strong>什麼是類別(class)</strong></em></h1><h2 id="1-他是OOP常用到的觀念之一"><a href="#1-他是OOP常用到的觀念之一" class="headerlink" title="1. 他是OOP常用到的觀念之一"></a>1. 他是OOP常用到的觀念之一</h2><h2 id="2-此定義方法使用對象為實體，也可以說通常實體是某個類別的產物"><a href="#2-此定義方法使用對象為實體，也可以說通常實體是某個類別的產物" class="headerlink" title="2. 此定義方法使用對象為實體，也可以說通常實體是某個類別的產物"></a>2. 此定義方法使用對象為實體，也可以說通常實體是某個類別的產物</h2><h2 id="3-類別的命名規定-＝-名字第一個字必須是常數"><a href="#3-類別的命名規定-＝-名字第一個字必須是常數" class="headerlink" title="3. 類別的命名規定 ＝ 名字第一個字必須是常數"></a>3. 類別的命名規定 ＝ 名字第一個字必須是常數</h2><hr>
-<h1 id="什麼是實體"><a href="#什麼是實體" class="headerlink" title="什麼是實體"></a><em><strong>什麼是實體</strong></em></h1><h2 id="1-他是OOP常用到的觀念之一-1"><a href="#1-他是OOP常用到的觀念之一-1" class="headerlink" title="1. 他是OOP常用到的觀念之一"></a>1. 他是OOP常用到的觀念之一</h2><h2 id="2-針對某個類別創造出的個體"><a href="#2-針對某個類別創造出的個體" class="headerlink" title="2. 針對某個類別創造出的個體"></a>2. 針對某個類別創造出的個體</h2><h2 id="3-類別的命名規則沒有特別規定"><a href="#3-類別的命名規則沒有特別規定" class="headerlink" title="3. 類別的命名規則沒有特別規定"></a>3. 類別的命名規則沒有特別規定</h2><hr>
-<h1 id="什麼是繼承"><a href="#什麼是繼承" class="headerlink" title="什麼是繼承"></a>什麼是繼承</h1><h2 id="1-與其說是繼承不如說是分類"><a href="#1-與其說是繼承不如說是分類" class="headerlink" title="1. 與其說是繼承不如說是分類"></a>1. 與其說是繼承不如說是分類</h2><h2 id="2-同個分類創造的實體，都會有相同的特徵"><a href="#2-同個分類創造的實體，都會有相同的特徵" class="headerlink" title="2. 同個分類創造的實體，都會有相同的特徵"></a>2. 同個分類創造的實體，都會有相同的特徵</h2><p>用以下程式碼例子說明類別與實體和繼承的關係：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Cat                         #在貓的類別當中</span><br><span class="line"> def eat(food)                    #他們有個吃東西的方法 </span><br><span class="line">  puts &quot;#&#123;food&#125; 好吃！&quot;            #這個方法會有食物好吃的動作</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new                   #在貓類別創造一個叫kitty的實體貓</span><br><span class="line">kitty.eat &quot;魚&quot;                    #因為kitty也是貓類，所以他也會有吃東西的方法吃魚</span><br><span class="line"></span><br><span class="line">#會印出： 魚 好吃！</span><br></pre></td></tr></table></figure>
-<p>簡單來說，以目前所學：</p>
-<p>我們可以有很多種類別，以貓類和狗類為例，針對不同種類可以產生不同類型的狗和貓，他們有會因為彼此類別的不同，繼承相對應的方法動作(特徵)</p>
-<hr>
-<h1 id="故事講解"><a href="#故事講解" class="headerlink" title="故事講解"></a>故事講解</h1><p>聽完這些專業術語，對於沒學程式的人或許還是很難理解，不然我們來講解剛剛一開始的故事吧～</p>
-<h2 id="1-火影忍者：-1"><a href="#1-火影忍者：-1" class="headerlink" title="1. 火影忍者："></a>1. 火影忍者：</h2><p>套用剛剛所學，{佐助}這個實體，來自『宇智波』家族這個類別，而這個家族的人都繼承了「寫輪眼」這個技能方法，這樣不就把剛剛的東西串起來了嗎？(或許抓到感覺了？可能喔～哈哈)</p>
-<h2 id="2-貓狗大戰：-1"><a href="#2-貓狗大戰：-1" class="headerlink" title="2. 貓狗大戰："></a>2. 貓狗大戰：</h2><p>『貓咪』和『狗狗』同樣都來自『哺乳動物』這個類別，所以他們都繼承了『哺乳動物』的特性，然而貓狗兩類都有各自的世界，像是『貓類』所創造的{kitty}貓咪，他們都繼承了「傲嬌的個性」，『狗類』所創造的{lucky}狗狗，他們都繼承了「效忠的性格」(這個例子或許比較容易讓大家接受吧？你是貓派還是狗派呢？)</p>
-<p>補充：</p>
-<p>或許有人疑惑那{佐助}的[須佐能乎]帥氣技能呢？{貓}的[討拍]跟[翻跟斗]呢？{狗}的[搖尾巴]跟[拿報紙]呢？由於這些技能在其他種類也有機會學會，所以我把他歸類到之後會介紹的模組module</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/28/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88-OOP/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -619,7 +563,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-11-27 01:52:42" itemprop="dateModified" datetime="2022-11-27T01:52:42+08:00">2022-11-27</time>
+                <time title="修改時間：2022-12-01 10:43:25" itemprop="dateModified" datetime="2022-12-01T10:43:25+08:00">2022-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -643,7 +587,7 @@
 
       
           <hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+<h1 id><a href="#" class="headerlink" title></a><div class="note info">
             <p><strong>『本篇重點』：什麼是符號，什麼是字串，他們的差別，個別使用時機，彼此如何轉換</strong>  </p>
           </div></h1><hr>
 <h1 id="什麼是符號"><a href="#什麼是符號" class="headerlink" title="什麼是符號"></a><em><strong>什麼是符號</strong></em></h1><h2 id="1-語法："><a href="#1-語法：" class="headerlink" title="1.語法："></a>1.語法：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:apple              # 這個符號叫apple，會在符號名稱前面加上冒號</span><br></pre></td></tr></table></figure>
@@ -651,17 +595,14 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1                   #數字物件</span><br><span class="line">&quot;aa&quot;                #字串物件</span><br><span class="line">:apple              #符號物件</span><br><span class="line">name = 1            #我指定name變數的值為數字1</span><br><span class="line">name = &quot;aa&quot;         #我指定name變數的值為字串aa</span><br><span class="line">name = :apple       #我指定name變數的值為符號apple</span><br><span class="line">         </span><br><span class="line">#下面這行語法錯誤，符號不能指定成字串，而且他是一個值，無法放在等號左邊</span><br><span class="line">:apple = 1</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="什麼是字串"><a href="#什麼是字串" class="headerlink" title="什麼是字串"></a><em><strong>什麼是字串</strong></em></h1><h2 id="1-定義：把內容用引號框起來變成一個字串物件"><a href="#1-定義：把內容用引號框起來變成一個字串物件" class="headerlink" title="1.定義：把內容用引號框起來變成一個字串物件"></a>1.定義：把內容用引號框起來變成一個字串物件</h2><h2 id="2-語法："><a href="#2-語法：" class="headerlink" title="2.語法："></a>2.語法：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;aa&#x27;               #單引號字串，特色:不能把變數帶到字串當中</span><br><span class="line">&quot;aa&quot;               #雙引號字串，特色:能把變數帶到字串當中</span><br></pre></td></tr></table></figure>
-<h2 id="3-雙引號字串舉例："><a href="#3-雙引號字串舉例：" class="headerlink" title="3.雙引號字串舉例："></a>3.雙引號字串舉例：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">name = &quot;Jason&quot;</span><br><span class="line">age = 18</span><br><span class="line">puts &quot;hi I am #&#123;name&#125;, and I am #&#123;age&#125; years old&quot;</span><br><span class="line">#會印出 hi I am Jason, and I am 18 years old</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="他們的差別"><a href="#他們的差別" class="headerlink" title="他們的差別"></a><em><strong>他們的差別</strong></em></h1><h2 id="1-字串的值可以改，符號不行"><a href="#1-字串的值可以改，符號不行" class="headerlink" title="1.字串的值可以改，符號不行"></a>1.字串的值可以改，符號不行</h2><h2 id="2-符號效能比字串好一點："><a href="#2-符號效能比字串好一點：" class="headerlink" title="2.符號效能比字串好一點："></a>2.符號效能比字串好一點：</h2><p>同個名字的符號，在記憶體裡面只有佔一個ID，但早期用完不會還(所以早期不一定比較省記憶體)。而字串每一個都有各自的ID，但用完會還。<br>補充：<br>在Ruby裡，數字物件的object ID 公式是2n+1，如果是2，object ID 是5，如果是5，object ID 是11，所以單數的object ID號碼大部分都是數字物件。</p>
-<hr>
-<h1 id="個別使用時機-（簡單區分）"><a href="#個別使用時機-（簡單區分）" class="headerlink" title="個別使用時機 （簡單區分）"></a><em><strong>個別使用時機 （簡單區分）</strong></em></h1><h2 id="1-如果這個東西不可變，用符號或冷凍字串"><a href="#1-如果這個東西不可變，用符號或冷凍字串" class="headerlink" title="1.如果這個東西不可變，用符號或冷凍字串"></a>1.如果這個東西不可變，用符號或冷凍字串</h2><h2 id="2-如果這個東西需要組合或變動的話，用字串"><a href="#2-如果這個東西需要組合或變動的話，用字串" class="headerlink" title="2.如果這個東西需要組合或變動的話，用字串"></a>2.如果這個東西需要組合或變動的話，用字串</h2><p>補充：<br>冷凍字串：目的是讓此物件的object ID 固定。</p>
-<h2 id="3-語法："><a href="#3-語法：" class="headerlink" title="3.語法："></a>3.語法：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">puts &quot;hello&quot;.freeze.object_id       #這邊用了freeze的方法</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="字串和符號轉換"><a href="#字串和符號轉換" class="headerlink" title="字串和符號轉換"></a><em><strong>字串和符號轉換</strong></em></h1><h2 id="1-語法-to-sym，sym就是symbol"><a href="#1-語法-to-sym，sym就是symbol" class="headerlink" title="1. 語法 to_sym，sym就是symbol"></a>1. 語法 to_sym，sym就是symbol</h2><h2 id="2-語法-to-s-，-s就是string"><a href="#2-語法-to-s-，-s就是string" class="headerlink" title="2. 語法 to_s ， s就是string"></a>2. 語法 to_s ， s就是string</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#字串轉符號</span><br><span class="line">p &quot;name&quot;.to_sym     #印出 :name ，這個方法常用</span><br><span class="line">p &quot;name&quot;.intern     #印出 :name</span><br><span class="line">#符號轉字串 </span><br><span class="line">p :name.to_s        #印出 &quot;name&quot; ，這個方法常用 </span><br><span class="line">p :name.id2name     #印出 &quot;name&quot;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/26/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E5%AD%97%E4%B8%B2%E5%92%8C%E7%AC%A6%E8%99%9F%E7%9A%84%E5%B7%AE%E5%88%A5/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
