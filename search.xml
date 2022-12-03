@@ -32,6 +32,54 @@
       </tags>
   </entry>
   <entry>
+    <title>Ruby新手村-實體變數與類別變數</title>
+    <url>/2022/12/03/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E5%AF%A6%E9%AB%94%E8%AE%8A%E6%95%B8%E8%88%87%E9%A1%9E%E5%88%A5%E8%AE%8A%E6%95%B8/</url>
+    <content><![CDATA[<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：實體變數、類別變數</strong>  </p>
+          </div></h1><hr>
+<p>在之前的文章『Ruby新手村-變數、常數』有提到變數種類，今天我們來了解一下其中的兩種變數，實體變數和類別變數</p>
+<h1 id="實體變數"><a href="#實體變數" class="headerlink" title="實體變數"></a><em><strong>實體變數</strong></em></h1><h2 id="1-變數命名："><a href="#1-變數命名：" class="headerlink" title="1. 變數命名："></a>1. 變數命名：</h2><p>變數命名時是＠開頭的</p>
+<h2 id="2-簡介："><a href="#2-簡介：" class="headerlink" title="2. 簡介："></a>2. 簡介：</h2><p>可以將實體變數看成實體所屬的資料，他會一直跟著實體，並且被他隨時取用</p>
+<p>以下我們來看個例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                           #我們建立一個貓類別</span><br><span class="line">  def initialize(name, age)         #裡面有個初始化的方法</span><br><span class="line">    @name = name                    #這個方法是將名字參數指定成實體變數name</span><br><span class="line">    @age = age                      #這個方法是將年齡參數指定成實體變數age</span><br><span class="line">  end</span><br><span class="line"></span><br><span class="line">  def say_my_name                   #這是個「說我名字」的方法</span><br><span class="line">    return @name                    #他的方法是回傳實體變數name</span><br><span class="line">  end</span><br><span class="line"></span><br><span class="line">  def say_my_age                    #這是個「說我年齡」的方法</span><br><span class="line">    return @age                     #他的方法是回傳實體變數age</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new(&#x27;kitty&#x27;, 18)       #我在Cat類別new一個新的kitty實體並帶入引數kitty和18</span><br><span class="line">puts kitty.say_my_name             #這行會印出kitty</span><br><span class="line">puts kitty.say_my_age              #這行會印出18</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>上述的例子是常見的實體變數使用情況，在貓類建立一個新的kitty貓，它使用了實體變數的「初始化」和「說我名字」跟「說我的年齡」的方法，只要有使用實體變數的地方，他都幫實體建立一個屬於他的資料（名字、年齡），實體也可以隨時使用些變數。</p>
+<h2 id="3-使用實體變數之方法狀況題"><a href="#3-使用實體變數之方法狀況題" class="headerlink" title="3. 使用實體變數之方法狀況題:"></a>3. 使用實體變數之方法狀況題:</h2><p>在Ruby世界，可以適時的省略小括號，會使得方法看起來像屬性，但在Ruby的世界裡面，根本沒有屬性這回事！有時會發生使用類似屬性的方法，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                          #建立一個Cat類別</span><br><span class="line"> def initialize(name)              #建立一個初始化方法</span><br><span class="line">  @name = name                     #方法內容是指定名字為實體變數name</span><br><span class="line"> end</span><br><span class="line"></span><br><span class="line"> def say_my_name                   #建立一個say_my_name的方法</span><br><span class="line">  return @name                     #回傳實體變數name</span><br><span class="line"> end</span><br><span class="line"></span><br><span class="line"> def name                          #getter  把東西拿出來的傢伙</span><br><span class="line">  return @name                     #當使用這個實體方法時，會印出kitty</span><br><span class="line"> end</span><br><span class="line"></span><br><span class="line"> def name=(new_name)               #setter 設定值的傢伙</span><br><span class="line">  @name = new_name                 #當只用這個實體方法時，會印出引數的名字</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new(&#x27;kitty&#x27;)</span><br><span class="line">puts kitty.name                    #看起來像是kitty想要使用，因為在ruby裡面小括號可以適時省略，所以事實上是呼叫kitty裡面的實體方法長這樣kitty.name()</span><br><span class="line">kitty.name = &quot;nancy&quot;               #這行原本想要用屬性設定的方法改掉name的結果</span><br><span class="line"></span><br><span class="line">#上面這行等於以下兩行</span><br><span class="line"></span><br><span class="line">kitty.name=&quot;nancy&quot;</span><br><span class="line">kitty.name=(&quot;nancy&quot;)               #這行的意思是使用name()的方法，並帶入引數“nancy”</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>上述例子中的kitty.name和kitty.name &#x3D; “nancy”，乍看之下很像是使用name這個屬性，但實質上他們都是使用方法，只是這個方法可以讓使用時看起來很像屬性</p>
+<h2 id="4-針對狀況題的另一種寫法："><a href="#4-針對狀況題的另一種寫法：" class="headerlink" title="4. 針對狀況題的另一種寫法："></a>4. 針對狀況題的另一種寫法：</h2><p>利用 ： attr_reader &#x2F; attr_writer &#x2F; attr_accessor，可以做出可讀 &#x2F; 可寫 &#x2F; 可讀可寫的屬性目的，但實質上不是屬性，只是看起來很像屬性</p>
+<p>用以下例子來看</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat</span><br><span class="line"> attr_reader :name                        # 這行等於上面的getter設定</span><br><span class="line"> attr_writer :name                        # 這行等於上面的setter設定</span><br><span class="line"> attr_accessor :name                      # 這行等於上面那兩行相加的效果</span><br><span class="line"></span><br><span class="line"> def initialize(name)</span><br><span class="line">  @name = name</span><br><span class="line"> end</span><br><span class="line"></span><br><span class="line"> def say_my_name</span><br><span class="line">  return @name</span><br><span class="line"> end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p><strong>使用補充：</strong></p>
+<p>a. 可讀可寫後面可以加很多實體變數，實體變數有點像是加上一些屬性</p>
+<p>b. 使用傾向，可以先讀或先寫就好，最後真的不行在可讀可寫</p>
+<hr>
+<h1 id="類別變數"><a href="#類別變數" class="headerlink" title="類別變數"></a><em><strong>類別變數</strong></em></h1><h2 id="1-變數命名：-1"><a href="#1-變數命名：-1" class="headerlink" title="1. 變數命名："></a>1. 變數命名：</h2><p>變數命名時是＠＠開頭的</p>
+<h2 id="2-簡介：-1"><a href="#2-簡介：-1" class="headerlink" title="2. 簡介："></a>2. 簡介：</h2><p>可以將類別變數看成類別所屬的資料，他會一直跟著類別，並且被他隨時取用</p>
+<h2 id="3-其他補充"><a href="#3-其他補充" class="headerlink" title="3. 其他補充"></a>3. 其他補充</h2><p>(1) 類別變數除了類別使用外，實體也可以使用</p>
+<p>(2) 實際上很少使用類別方法，因為繼承的機制可以將類別方法繼承，會有污染其他方法的狀況發生</p>
+<p>舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                    #建立一個Cat裡別</span><br><span class="line">  @@count = 0                #建立一個類別變數count為0  </span><br><span class="line"></span><br><span class="line">  def initialize             #建立一個初始化方法</span><br><span class="line">    @@count += 1             #這個方法內容是將類別變數加1</span><br><span class="line">  end</span><br><span class="line"></span><br><span class="line">  def self.counter           #建立一個類別方法counter(這是類別方發的另一種寫法)</span><br><span class="line">    return @@counter         #這個方法是回傳類別變數counter</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">5.times&#123;Cat.new&#125;             #創造新的貓類實體5次</span><br><span class="line"></span><br><span class="line">p Cat.counter                #印出5</span><br></pre></td></tr></table></figure>
+<p>在這個例子中，我們創造了五次貓類別實體，過程也利用類別變數記錄了下來，一開始設定類別變數為0，而初始化方法是將類別變數＋1，也就是說每次new新的實體，都會初始化然後＋1，經過五次後類別變數counter就會印出5。</p>
+<hr>
+<p>以上就是關於Ruby的實體變數和類別變數的相關介紹， 持續更新文章，敬請期待～</p>
+]]></content>
+      <categories>
+        <category>Ruby</category>
+      </categories>
+      <tags>
+        <tag>類別變數</tag>
+        <tag>attr_reader</tag>
+        <tag>attr_writer</tag>
+        <tag>attr_accessor</tag>
+        <tag>實體變數</tag>
+        <tag>實體</tag>
+        <tag>類別</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ruby新手村-方法</title>
     <url>/2022/11/30/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<hr>
@@ -77,8 +125,8 @@
         <category>Ruby</category>
       </categories>
       <tags>
-        <tag>方法</tag>
         <tag>類別</tag>
+        <tag>方法</tag>
         <tag>函數</tag>
         <tag>function</tag>
         <tag>命名</tag>
@@ -165,10 +213,10 @@
         <category>Ruby</category>
       </categories>
       <tags>
+        <tag>實體</tag>
         <tag>類別</tag>
         <tag>命名</tag>
         <tag>oop</tag>
-        <tag>實體</tag>
         <tag>繼承</tag>
         <tag>物件</tag>
         <tag>Block</tag>
@@ -203,11 +251,11 @@
         <category>Ruby</category>
       </categories>
       <tags>
+        <tag>實體</tag>
         <tag>類別</tag>
         <tag>參數</tag>
         <tag>引數</tag>
         <tag>oop</tag>
-        <tag>實體</tag>
         <tag>物件</tag>
         <tag>initialize</tag>
         <tag>初始化</tag>
