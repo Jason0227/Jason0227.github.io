@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ruby新手村-Ruby簡介</title>
+    <url>/2022/12/04/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-Ruby%E7%B0%A1%E4%BB%8B/</url>
+    <content><![CDATA[<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：Ruby簡介、印出hello world、註解、Coding Style、程式生態圈</strong>  </p>
+          </div></h1><hr>
+<p>原本要放在本系列的第一篇文章的，但礙於每天都有當下想了解的原理與技術，並且同時把它紀錄下來，所以就沒有依照順序發布了～</p>
+<p>今天我們要來了解一下Ruby以及其他語言都會有的相關語法</p>
+<h1 id="Ruby簡介"><a href="#Ruby簡介" class="headerlink" title="Ruby簡介"></a><em><strong>Ruby簡介</strong></em></h1><h2 id="1-誕生時間：1995年12月"><a href="#1-誕生時間：1995年12月" class="headerlink" title="1. 誕生時間：1995年12月"></a>1. 誕生時間：1995年12月</h2><h2 id="2-設計者：松本行弘"><a href="#2-設計者：松本行弘" class="headerlink" title="2. 設計者：松本行弘"></a>2. 設計者：松本行弘</h2><h2 id="3-理念："><a href="#3-理念：" class="headerlink" title="3. 理念："></a>3. 理念：</h2><p>（1）它是一種 <strong>物件導向程式語言(OOP)</strong> ，在Ruby世界裡幾乎所有東西都是物件<br>（2）系統設計強調人性化，對於開發者編寫程式時可以很直觀</p>
+<hr>
+<h1 id="印出hello-world"><a href="#印出hello-world" class="headerlink" title="印出hello world"></a><em><strong>印出hello world</strong></em></h1><p>在Ruby語法中有三種方式可以印出東西，分別為print、puts、p</p>
+<h2 id="1-print-語法"><a href="#1-print-語法" class="headerlink" title="1. print 語法"></a>1. print 語法</h2><p>特點：印出字串裡的文字<br><img src="https://i.imgur.com/ZGNkvZl.png"></p>
+<h2 id="2-puts-語法"><a href="#2-puts-語法" class="headerlink" title="2. puts 語法"></a>2. puts 語法</h2><p>特點：印出字串裡的文字，並在結尾加上換行<br><img src="https://i.imgur.com/yjLHUfs.png"></p>
+<h2 id="3-p-語法"><a href="#3-p-語法" class="headerlink" title="3. p 語法"></a>3. p 語法</h2><p>特點：印出字串（包含雙引號），並在結尾加上換行<br><img src="https://i.imgur.com/vvZCwn4.png"></p>
+<hr>
+<h1 id="註解"><a href="#註解" class="headerlink" title="註解"></a><em><strong>註解</strong></em></h1><p>因為註解不會被執行，常用於說明某段程式碼的用途，或者暫時把某些程式碼&lt;關起來&gt;，在Ruby語法中有兩種註解的方式</p>
+<h2 id="1-多行註解：-x3D-begin-加上-x3D-end"><a href="#1-多行註解：-x3D-begin-加上-x3D-end" class="headerlink" title="1. 多行註解： &#x3D;begin 加上 &#x3D;end"></a>1. 多行註解： &#x3D;begin 加上 &#x3D;end</h2><p>此方法不常用，用法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">=begin</span><br><span class="line">註解內容</span><br><span class="line">=end</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-單行註解：-＃"><a href="#2-單行註解：-＃" class="headerlink" title="2. 單行註解： ＃"></a>2. 單行註解： ＃</h2><p>此方法很常用，在需要註解的語法前面加上＃字鍵，用法如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 被註解程式碼</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a><em><strong>Coding Style</strong></em></h1><p>在不同的程式碼都有屬於自己的編碼習慣，像在Ruby中的縮排，是用兩個空白鍵或一個Tab鍵，舉例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Ruby不合格的縮排</span><br><span class="line"></span><br><span class="line">class Cat</span><br><span class="line">    puts &quot;喵&quot;</span><br><span class="line">ens</span><br><span class="line"></span><br><span class="line"># Ruby合格的縮排</span><br><span class="line"></span><br><span class="line">class Cat</span><br><span class="line">  puts &quot;喵&quot;</span><br><span class="line">ens</span><br></pre></td></tr></table></figure>
+<p>更多資訊請參考：<a href="https://github.com/rubocop/ruby-style-guide">https://github.com/rubocop/ruby-style-guide</a></p>
+<hr>
+<h1 id="程式生態圈"><a href="#程式生態圈" class="headerlink" title="程式生態圈"></a><em><strong>程式生態圈</strong></em></h1><h2 id="1-簡介"><a href="#1-簡介" class="headerlink" title="1. 簡介"></a>1. 簡介</h2><p>程式語言沒有強弱之分，只有是不適合那個生態圈的差別，以Ruby為例，因為大部分的人都用來開發Web，所以相應而生的各種套件、資源、開發者，建構了一個完善的網站開發生態圈，所以大家才會說Ruby是用來開發網站的程式語言。</p>
+<h2 id="2-Ruby-套件管理平台"><a href="#2-Ruby-套件管理平台" class="headerlink" title="2. Ruby 套件管理平台"></a>2. Ruby 套件管理平台</h2><p>RubyGems：<a href="https://rubygems.org/?locale=zh-TW">https://rubygems.org/?locale=zh-TW</a></p>
+]]></content>
+      <categories>
+        <category>Ruby</category>
+      </categories>
+      <tags>
+        <tag>註解</tag>
+        <tag>Coding Style</tag>
+        <tag>印東西</tag>
+        <tag>puts</tag>
+        <tag>print</tag>
+        <tag>p</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ruby新手村-字串和符號的差別</title>
     <url>/2022/11/26/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E5%AD%97%E4%B8%B2%E5%92%8C%E7%AC%A6%E8%99%9F%E7%9A%84%E5%B7%AE%E5%88%A5/</url>
     <content><![CDATA[<hr>
@@ -223,45 +266,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ruby新手村-物件的初始化</title>
-    <url>/2022/12/02/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E7%89%A9%E4%BB%B6%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
-    <content><![CDATA[<hr>
-<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
-            <p><strong>『本篇重點』：什麼是物件初始化？初始化如何使用？初始化與new的差別？</strong>  </p>
-          </div></h1><hr>
-<p>在之前文章『物件導向程式設計（OOP）』有提到如何建立一個類別，並且用那個類別創造一個實體，今天我們要說明在這個過程中常會使用到的物件初始化</p>
-<h1 id="什麼是物件初始化"><a href="#什麼是物件初始化" class="headerlink" title="什麼是物件初始化"></a><em><strong>什麼是物件初始化</strong></em></h1><h2 id="1-概念："><a href="#1-概念：" class="headerlink" title="1. 概念："></a>1. 概念：</h2><p>想像他是這個類別創造新實體的初始設定，就像是貓類別創造的貓咪，初始化設定都是會喵喵叫，總不可能是旺旺叫對吧～</p>
-<h2 id="2-語法："><a href="#2-語法：" class="headerlink" title="2. 語法："></a>2. 語法：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def initialize</span><br><span class="line">    # 初始化方法內容</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a><em><strong>如何使用</strong></em></h1><h2 id="1-常會放在類別方法的第一個位置"><a href="#1-常會放在類別方法的第一個位置" class="headerlink" title="1. 常會放在類別方法的第一個位置"></a>1. 常會放在類別方法的第一個位置</h2><h2 id="2-每次創造新的實體，第一個做的方法都是初始化"><a href="#2-每次創造新的實體，第一個做的方法都是初始化" class="headerlink" title="2. 每次創造新的實體，第一個做的方法都是初始化"></a>2. 每次創造新的實體，第一個做的方法都是初始化</h2><p>舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                      #建立一個Cat類別</span><br><span class="line"> def initialize                #建立一個初始化的類別方法</span><br><span class="line">   puts &quot;喵喵叫&quot;                #這個方法是喵喵叫</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new                #用Cat類別創造一個kitty實體，因為創造時會直接執行初始化方法，所以他一出生就會喵喵叫</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-引數錯誤"><a href="#3-引數錯誤" class="headerlink" title="3. 引數錯誤"></a>3. 引數錯誤</h2><p>要特別注意的是， initialize的參數和new的引數數量要一樣，不然會發生引數個數的錯誤訊息，舉例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat</span><br><span class="line">  def initialize (name, age)  #在建立初始化方法時，有兩個參數</span><br><span class="line">    @name = name</span><br><span class="line">    @age = age</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new             #在new新的實體時，沒有給引數</span><br></pre></td></tr></table></figure>
-
-<p>這個例子會發現出現錯誤訊息，原因是創造kitty實體沒給他引數帶入初始化方法中，而初始化已經準備了兩個參數給引數使用，所以在使用時記得「一個蘿蔔一個坑」的觀念，初始化方法有幾個參數，在創造實體時就要給他幾個引數。</p>
-<hr>
-<h1 id="初始化和new的差別"><a href="#初始化和new的差別" class="headerlink" title="初始化和new的差別"></a><em><strong>初始化和new的差別</strong></em></h1><h2 id="1-他們之間其實是合作關係，甚至有先後順序，以下面的例子來說："><a href="#1-他們之間其實是合作關係，甚至有先後順序，以下面的例子來說：" class="headerlink" title="1. 他們之間其實是合作關係，甚至有先後順序，以下面的例子來說："></a>1. 他們之間其實是合作關係，甚至有先後順序，以下面的例子來說：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                     #建立一個Cat類別</span><br><span class="line"> def initialize(name, age)    #建議一個初始化類別方法，並設定名字和年齡兩的參數</span><br><span class="line">  @name = name                #指定一個name實體變數為名字</span><br><span class="line">  @age = age                  #指定一個age實體變數為年齡</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new(&quot;kitty&quot;, 18) #用Cat類別方法創造一個kitty實體貓咪，並帶入兩個引數，他的名字和年齡</span><br></pre></td></tr></table></figure>
-
-<p>當我們用貓類別創造一個kitty貓實體時，帶入了他的名字和年齡，此時會在初始化方法中幫他建立名字和年齡，這樣她一出生就是個有名子、有年紀的貓拉～</p>
-<h2 id="2-以電腦的角度："><a href="#2-以電腦的角度：" class="headerlink" title="2. 以電腦的角度："></a>2. 以電腦的角度：</h2><p>他們是前後關係，先new完之後，他會自動執行initialize，當new個物件後，他會跟記憶體拿取一個空間，接著做物件初始化設定，同時傳給new方法的引數，後續會由initialize方法接收。</p>
-]]></content>
-      <categories>
-        <category>Ruby</category>
-      </categories>
-      <tags>
-        <tag>實體</tag>
-        <tag>類別</tag>
-        <tag>參數</tag>
-        <tag>引數</tag>
-        <tag>oop</tag>
-        <tag>物件</tag>
-        <tag>initialize</tag>
-        <tag>初始化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ruby新手村-變數、常數</title>
     <url>/2022/12/01/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E8%AE%8A%E6%95%B8%E3%80%81%E5%B8%B8%E6%95%B8/</url>
     <content><![CDATA[<hr>
@@ -317,6 +321,45 @@
         <tag>變數</tag>
         <tag>常數</tag>
         <tag>無效變數命名</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ruby新手村-物件的初始化</title>
+    <url>/2022/12/02/Ruby%E6%96%B0%E6%89%8B%E6%9D%91-%E7%89%A9%E4%BB%B6%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96/</url>
+    <content><![CDATA[<hr>
+<h1 id=""><a href="#" class="headerlink" title=""></a><div class="note info">
+            <p><strong>『本篇重點』：什麼是物件初始化？初始化如何使用？初始化與new的差別？</strong>  </p>
+          </div></h1><hr>
+<p>在之前文章『物件導向程式設計（OOP）』有提到如何建立一個類別，並且用那個類別創造一個實體，今天我們要說明在這個過程中常會使用到的物件初始化</p>
+<h1 id="什麼是物件初始化"><a href="#什麼是物件初始化" class="headerlink" title="什麼是物件初始化"></a><em><strong>什麼是物件初始化</strong></em></h1><h2 id="1-概念："><a href="#1-概念：" class="headerlink" title="1. 概念："></a>1. 概念：</h2><p>想像他是這個類別創造新實體的初始設定，就像是貓類別創造的貓咪，初始化設定都是會喵喵叫，總不可能是旺旺叫對吧～</p>
+<h2 id="2-語法："><a href="#2-語法：" class="headerlink" title="2. 語法："></a>2. 語法：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def initialize</span><br><span class="line">    # 初始化方法內容</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a><em><strong>如何使用</strong></em></h1><h2 id="1-常會放在類別方法的第一個位置"><a href="#1-常會放在類別方法的第一個位置" class="headerlink" title="1. 常會放在類別方法的第一個位置"></a>1. 常會放在類別方法的第一個位置</h2><h2 id="2-每次創造新的實體，第一個做的方法都是初始化"><a href="#2-每次創造新的實體，第一個做的方法都是初始化" class="headerlink" title="2. 每次創造新的實體，第一個做的方法都是初始化"></a>2. 每次創造新的實體，第一個做的方法都是初始化</h2><p>舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                      #建立一個Cat類別</span><br><span class="line"> def initialize                #建立一個初始化的類別方法</span><br><span class="line">   puts &quot;喵喵叫&quot;                #這個方法是喵喵叫</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new                #用Cat類別創造一個kitty實體，因為創造時會直接執行初始化方法，所以他一出生就會喵喵叫</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-引數錯誤"><a href="#3-引數錯誤" class="headerlink" title="3. 引數錯誤"></a>3. 引數錯誤</h2><p>要特別注意的是， initialize的參數和new的引數數量要一樣，不然會發生引數個數的錯誤訊息，舉例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat</span><br><span class="line">  def initialize (name, age)  #在建立初始化方法時，有兩個參數</span><br><span class="line">    @name = name</span><br><span class="line">    @age = age</span><br><span class="line">  end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new             #在new新的實體時，沒有給引數</span><br></pre></td></tr></table></figure>
+
+<p>這個例子會發現出現錯誤訊息，原因是創造kitty實體沒給他引數帶入初始化方法中，而初始化已經準備了兩個參數給引數使用，所以在使用時記得「一個蘿蔔一個坑」的觀念，初始化方法有幾個參數，在創造實體時就要給他幾個引數。</p>
+<hr>
+<h1 id="初始化和new的差別"><a href="#初始化和new的差別" class="headerlink" title="初始化和new的差別"></a><em><strong>初始化和new的差別</strong></em></h1><h2 id="1-他們之間其實是合作關係，甚至有先後順序，以下面的例子來說："><a href="#1-他們之間其實是合作關係，甚至有先後順序，以下面的例子來說：" class="headerlink" title="1. 他們之間其實是合作關係，甚至有先後順序，以下面的例子來說："></a>1. 他們之間其實是合作關係，甚至有先後順序，以下面的例子來說：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Cat                     #建立一個Cat類別</span><br><span class="line"> def initialize(name, age)    #建議一個初始化類別方法，並設定名字和年齡兩的參數</span><br><span class="line">  @name = name                #指定一個name實體變數為名字</span><br><span class="line">  @age = age                  #指定一個age實體變數為年齡</span><br><span class="line"> end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">kitty = Cat.new(&quot;kitty&quot;, 18) #用Cat類別方法創造一個kitty實體貓咪，並帶入兩個引數，他的名字和年齡</span><br></pre></td></tr></table></figure>
+
+<p>當我們用貓類別創造一個kitty貓實體時，帶入了他的名字和年齡，此時會在初始化方法中幫他建立名字和年齡，這樣她一出生就是個有名子、有年紀的貓拉～</p>
+<h2 id="2-以電腦的角度："><a href="#2-以電腦的角度：" class="headerlink" title="2. 以電腦的角度："></a>2. 以電腦的角度：</h2><p>他們是前後關係，先new完之後，他會自動執行initialize，當new個物件後，他會跟記憶體拿取一個空間，接著做物件初始化設定，同時傳給new方法的引數，後續會由initialize方法接收。</p>
+]]></content>
+      <categories>
+        <category>Ruby</category>
+      </categories>
+      <tags>
+        <tag>實體</tag>
+        <tag>類別</tag>
+        <tag>參數</tag>
+        <tag>引數</tag>
+        <tag>oop</tag>
+        <tag>物件</tag>
+        <tag>initialize</tag>
+        <tag>初始化</tag>
       </tags>
   </entry>
 </search>
